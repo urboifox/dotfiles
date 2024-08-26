@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# IMPORTANT: This script modifies neovim and default bash, i made it to speed up setting up a new OS. DONT run this unless you read what it does
+
 ZSHRC_PATH="$HOME/.zshrc"
 BASHRC_PATH="$HOME/.bashrc"
 CURRENT_PATH="$(dirname "$0")"
