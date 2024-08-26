@@ -6,13 +6,15 @@ ZSHRC_PATH="$HOME/.zshrc"
 BASHRC_PATH="$HOME/.bashrc"
 CURRENT_PATH="$(dirname "$0")"
 
+# add neovim latest repo
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+
 # Update and upgrade
 echo "Updating and upgrading packages..."
 sudo apt update && sudo apt upgrade -y || { echo "Failed to update and upgrade packages"; exit 1; }
-
 # Install core packages
 echo "Installing core packages..."
-sudo apt install git nodejs neovim tree ripgrep fzf at curl zsh neofetch tmux lolcat cowsay figlet -y || { echo "Installing packages failed, make sure you are connected to the internet and try again."; exit 1; }
+sudo apt install git pip python3 nodejs neovim tree ripgrep fzf at curl zsh neofetch tmux lolcat cowsay figlet -y || { echo "Installing packages failed, make sure you are connected to the internet and try again."; exit 1; }
 echo "Finished installing packages."
 
 # Copy tmux config
