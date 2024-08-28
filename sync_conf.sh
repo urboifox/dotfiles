@@ -17,8 +17,14 @@ cp -f "$0" $REPO
 cd $REPO || exit
 
 git add .
-read -p "commit message: " commit_message
-git commit -m "$commit_message:=Modified config files"
+
+default_message="Modifies config files"
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+read -p "commit message [$default_message]: " commit_message
+
+git commit -m "${commit_message:-$default_message}"
+git push origin $branch_name
 
 cd $CWD
 
