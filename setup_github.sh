@@ -24,5 +24,5 @@ else
 	echo "Skipping SSH key setup."
 fi
 
-[ ! -f /usr/local/bin/gacp ] && sudo ln -s $(pwd)/gacp.sh /usr/local/bin/gacp
+sudo cp -f $(pwd)/gacp.sh /usr/local/bin/gacp
 
