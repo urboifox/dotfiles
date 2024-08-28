@@ -26,20 +26,22 @@ cd dotfiles
 
 2. Run Initialization Script: Execute the initialize.sh script to install core packages and set up your development environment:
 ```bash
-git clone https://github.com/urboifox/dotfiles
-cd dotfiles
+chmod u+x initialization.sh
+bash initialization.sh
 # WARNING: It's recommended to read this script before running it, it modifies node, neovim, and other packages and directories on your system
 # if you are not sure, just run the setup_neovim.sh or setup_github.sh based on your needs.
 ```
 
 3. Run GitHub Setup Script: takes your github email and generates an ssh key:
 ```bash
+chmod u+x setup_github.sh
 bash setup_github.sh
 ```
 
 
 4. Run Neovim Setup Script: Configure Neovim and adds custom configuration and plugins using Lazy.nvim:
 ```bash
+chmod u+x setup_github.sh
 bash setup_nvim.sh
 ```
 
