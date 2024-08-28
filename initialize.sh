@@ -17,17 +17,8 @@ echo "Installing core packages..."
 sudo apt install git pip python3-venv cava python3 nodejs neovim tree ripgrep fzf at curl zsh neofetch tmux lolcat cowsay figlet -y || { echo "Installing packages failed, make sure you are connected to the internet and try again."; exit 1; }
 echo "Finished installing packages."
 
-
-echo "Installing fonts..."
-sudo apt install fontconfig
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-mkdir -p $HOME/.local/share/fonts
-unzip Meslo.zip -d $HOME/.local/share/fonts
-rm $HOME/.local/share/fonts/*Windows*
-rm Meslo.zip
-fc-cache -fv
-
 # Run additional setup scripts
+"$CURRENT_PATH/setup_fonts.sh" || { echo "Failed to run setup_fonts.sh"; exit 1; }
 "$CURRENT_PATH/setup_nvim.sh" || { echo "Failed to run setup_nvim.sh"; exit 1; }
 "$CURRENT_PATH/setup_github.sh" || { echo "Failed to run setup_github.sh"; exit 1; }
 "$CURRENT_PATH/setup_tmux.sh" || { echo "Failed to run setup_tmux.sh"; exit 1; }
@@ -38,6 +29,6 @@ fc-cache -fv
 echo -e "\nAll good!"
 echo "Finish the setup by doing the remaining steps:"
 echo "1- Add 'zsh-autosuggestions' and 'zsh-syntax-highlighting' to your .zshrc file in the 'plugins' variable"
-echo "2- Change the default font in your terminal to Moslo nerd font, for the file icons to work"
+echo "2- Change the default font in your terminal to the nerd font inside setup_fonts.sh, for the file icons to work"
 echo "3- Don't forget to log out and login again, for the default shell to refresh"
 
