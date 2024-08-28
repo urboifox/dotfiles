@@ -22,32 +22,40 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move current line down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move current line up" })
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move current line down" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move current line up" })
 
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Join bottom line with current line" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll half page down" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz",	{ desc = "Scroll half page up" })
+keymap.set("n", "J", "mzJ`z", { desc = "Join bottom line with current line" })
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll half page down" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll half page up" })
 
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paster without losing the previous yanked text" })
+keymap.set("x", "<leader>p", [["_dP]], { desc = "Paster without losing the previous yanked text" })
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
-vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
+keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
+keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], { desc = "Delete to void registry" })
+keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete to void registry" })
 
-vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
+keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 
-vim.keymap.set("n", "Q", "<nop>")
+keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Go to next error" })
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "Go to previous error" })
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Go to quicfix list next entry" })
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Go to quicfix list previous entry" })
+keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Go to next error" })
+keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "Go to previous error" })
+keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Go to quicfix list next entry" })
+keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Go to quicfix list previous entry" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Change the current word in the whole file" })
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make the current file executable" })
+keymap.set(
+	"n",
+	"<leader>s",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Change the current word in the whole file" }
+)
+keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make the current file executable" })
 
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+keymap.set("n", "<leader><leader>", function()
+	vim.cmd("so")
 end)
+
+keymap.set({ "n", "v" }, "<S-Down>", "<Down>") -- disable scrolling Down with shift
+keymap.set({ "n", "v" }, "<S-Up>", "<Up>") -- disable scrolling Up with shift

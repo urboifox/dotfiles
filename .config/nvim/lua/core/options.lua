@@ -36,27 +36,3 @@ opt.scrolloff = 25 -- scroll gap 25 lines
 
 opt.hlsearch = false
 opt.incsearch = true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
