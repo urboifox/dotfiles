@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 CURRENT_PATH="$(dirname "$0")"
 
 echo "Setting up Neovim..."
