@@ -7,7 +7,8 @@ if [[ $UID != 0 ]]; then
 fi
 
 
-echo "Creating git SSH key..."
+echo "Setting up GitHub access..."
+
 read -p "Enter your GitHub email (leave empty to skip setting up GitHub): " git_email
 
 if [ -n "$git_email" ]; then
@@ -26,3 +27,4 @@ fi
 
 sudo cp -f $(pwd)/gacp.sh /usr/local/bin/gacp
 
+echo "Done!"

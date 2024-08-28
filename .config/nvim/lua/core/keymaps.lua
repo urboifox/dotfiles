@@ -59,3 +59,10 @@ end)
 
 keymap.set({ "n", "v" }, "<S-Down>", "<Down>") -- disable scrolling Down with shift
 keymap.set({ "n", "v" }, "<S-Up>", "<Up>") -- disable scrolling Up with shift
+
+keymap.set(
+	"n",
+	"<leader>fp",
+	"<cmd>silent !tmux neww tmux-sessionizer<CR>",
+	{ desc = "Find projects with tmux sessionizer" }
+)
