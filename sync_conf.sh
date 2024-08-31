@@ -18,7 +18,7 @@ cd $REPO || exit
 
 git add .
 
-default_message="Modifies config files"
+default_message="Modified config files"
 branch_name=$(git rev-parse --abbrev-ref HEAD)
 
 read -p "commit message [$default_message]: " commit_message
