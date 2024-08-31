@@ -21,11 +21,6 @@ opt.wrap = true -- line wrap
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixes case in your search, assumes you want case-sensitive
 
--- presist undo
-opt.swapfile = false
-opt.backup = false
-opt.undofile = true
-opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
 
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
