@@ -35,9 +35,10 @@ return {
 				"lua_ls",
 				"graphql",
 				"emmet_ls",
-				"prismals",
+                "rust_analyzer",
 				"pyright",
 				"clangd",
+                "gopls"
 			},
 		})
 
