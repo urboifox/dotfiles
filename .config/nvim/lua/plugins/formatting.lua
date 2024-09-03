@@ -1,44 +1,62 @@
 return {
-	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"jose-elias-alvarez/null-ls.nvim",
+		"MunifTanjim/prettier.nvim",
+	},
 	config = function()
-		local conform = require("conform")
-		-- prettier options
-		local tabwidth = 4
-		local prettier_options = "--tab-width " .. tabwidth
+		local null_ls = require("null-ls")
 
-		conform.setup({
-			formatters_by_ft = {
-				javascript = { "prettier " .. prettier_options },
-				typescript = { "prettier " .. prettier_options },
-				javascriptreact = { "prettier " .. prettier_options },
-				typescriptreact = { "prettier " .. prettier_options },
-				svelte = { "prettier " .. prettier_options },
-				css = { "prettier " .. prettier_options },
-				html = { "prettier " .. prettier_options },
-				json = { "prettier " .. prettier_options },
-				yaml = { "prettier " .. prettier_options },
-				markdown = { "prettier " .. prettier_options },
-				graphql = { "prettier " .. prettier_options },
-				liquid = { "prettier " .. prettier_options },
-				cpp = { "prettier " .. prettier_options },
-				c = { "prettier " .. prettier_options },
-				lua = { "stylua" },
-				python = { "isort", "black" },
-			},
-			-- format_on_save = {
-			--     lsp_fallback = true,
-			--     async = false,
-			--     timeout_ms = 1000,
-			-- },
+		local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+		local event = "BufWritePre" -- or "BufWritePost"
+		local async = event == "BufWritePost"
+
+		null_ls.setup({
+			on_attach = function(client, bufnr)
+				if client.supports_method("textDocument/formatting") then
+					vim.keymap.set("n", "<Leader>f", function()
+						vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+					end, { buffer = bufnr, desc = "[lsp] format" })
+
+					-- format on save
+					vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+					vim.api.nvim_create_autocmd(event, {
+						buffer = bufnr,
+						group = group,
+						callback = function()
+							vim.lsp.buf.format({ bufnr = bufnr, async = async })
+						end,
+						desc = "[lsp] format on save",
+					})
+				end
+
+				if client.supports_method("textDocument/rangeFormatting") then
+					vim.keymap.set("x", "<Leader>f", function()
+						vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+					end, { buffer = bufnr, desc = "[lsp] format" })
+				end
+			end,
 		})
 
-		vim.keymap.set({ "n", "v" }, "f=", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
-		end, { desc = "Format file or range (in visual mode)" })
+		local prettier = require("prettier")
+
+		prettier.setup({
+			bin = "prettier", -- or `'prettierd'` (v0.23.3+)
+			filetypes = {
+				"css",
+				"graphql",
+				"html",
+				"javascript",
+				"javascriptreact",
+				"json",
+				"less",
+				"markdown",
+				"scss",
+				"typescript",
+				"typescriptreact",
+				"yaml",
+			},
+		})
+
 	end,
 }
