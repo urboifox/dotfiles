@@ -47,7 +47,7 @@ keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Go to quicfix list pr
 
 keymap.set(
 	"n",
-	"<leader>s",
+	"<leader>cw",
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ desc = "Change the current word in the whole file" }
 )
