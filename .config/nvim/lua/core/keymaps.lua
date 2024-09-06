@@ -67,4 +67,7 @@ keymap.set(
 	{ desc = "Find projects with tmux sessionizer" }
 )
 
-vim.keymap.set({ "n", "v" }, "f=", "<cmd>:Prettier<cr>")
+keymap.set({ "n", "v" }, "f=", "<cmd>:Prettier<cr>")
+
+
+keymap.set("n", "<leader>f.", "<cmd>:NvimTreeFindFile<cr>")
