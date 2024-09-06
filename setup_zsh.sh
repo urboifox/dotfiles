@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo apt install zsh -y || { echo "Failed to install zsh"; exit 1; }
+
 # Remove existing Oh My Zsh directory if present
 if [ -d "$HOME/.oh-my-zsh" ]; then
     echo "Removing existing Oh My Zsh directory..."
