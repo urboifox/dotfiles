@@ -3,6 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
+    # change the ~/workspace/ to your workspace directory
     selected=$(find ~/workspace/ -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
