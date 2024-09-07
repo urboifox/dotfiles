@@ -15,6 +15,7 @@ sudo apt update && sudo apt upgrade -y || { echo "Failed to update and upgrade p
 # Install core packages
 echo "Installing core packages..."
 sudo apt install git pip python3-venv cava python3 nodejs neovim tree ripgrep fzf at curl zsh neofetch tmux lolcat cowsay figlet -y || { echo "Installing packages failed, make sure you are connected to the internet and try again."; exit 1; }
+npm i -g eslint@8
 echo "Finished installing packages."
 
 # Run additional setup scripts
