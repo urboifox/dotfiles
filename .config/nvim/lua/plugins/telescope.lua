@@ -12,6 +12,7 @@ return {
 
 		telescope.setup({
 			defaults = {
+        file_ignore_patterns = { ".git/", ".cache/", "node_modules/", "build/", "target/" },
 				path_display = { "smart" },
 				mappings = {
 					i = {
