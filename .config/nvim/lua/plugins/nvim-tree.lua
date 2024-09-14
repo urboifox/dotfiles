@@ -13,7 +13,6 @@ return {
 				width = 35,
 				relativenumber = true,
 			},
-			-- change folder arrow icons
 			renderer = {
 				indent_markers = {
 					enable = true,
@@ -24,6 +23,7 @@ return {
 			-- window splits
 			actions = {
 				open_file = {
+        quit_on_open = true,
 					window_picker = {
 						enable = false,
 					},
