@@ -55,7 +55,7 @@ keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Ma
 
 keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
-end)
+end, { desc = "Source the current file" })
 
 keymap.set({ "n", "v" }, "<S-Down>", "<Down>") -- disable scrolling Down with shift
 keymap.set({ "n", "v" }, "<S-Up>", "<Up>") -- disable scrolling Up with shift
@@ -66,8 +66,5 @@ keymap.set(
 	"<cmd>silent !tmux neww tmux-sessionizer<CR>",
 	{ desc = "Find projects with tmux sessionizer" }
 )
-
-keymap.set({ "n", "v" }, "f=", "<cmd>:Prettier<cr>")
-
 
 keymap.set("n", "<leader>f.", "<cmd>:NvimTreeFindFile<cr>")

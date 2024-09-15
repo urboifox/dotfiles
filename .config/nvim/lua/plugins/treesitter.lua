@@ -12,10 +12,10 @@ return {
 				enable = true,
 			},
 			-- enable indentation
-            modules = {},
-            auto_install = false,
-            sync_install = false,
-            ignore_install = { "" },
+			modules = {},
+			auto_install = false,
+			sync_install = false,
+			ignore_install = { "" },
 			indent = { enable = true },
 			-- ensure these language parsers are installed
 			ensure_installed = {
@@ -29,7 +29,7 @@ return {
 				"prisma",
 				"markdown",
 				"cpp",
-        "rust",
+				"rust",
 				"markdown_inline",
 				"svelte",
 				"graphql",
