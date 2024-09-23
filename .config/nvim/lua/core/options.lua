@@ -8,13 +8,13 @@ opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
-opt.tabstop = 4 -- 4 spaces or tabs
-opt.softtabstop = 4
-opt.shiftwidth = 4 -- 4 spaces for indent width
+opt.tabstop = 2 -- 2 spaces or tabs
+opt.softtabstop = 2
+opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.backup = false
-opt.wrap = true -- line wrap
+opt.wrap = false -- line wrap
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching

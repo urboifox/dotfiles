@@ -5,7 +5,7 @@ return {
 			-- General options
 			auto_update         = true,
 			neovim_image_text   = "The One True Text Editor",
-			main_image          = "neovim",                   -- Main image display (either "neovim" or "file")
+			main_image          = "file",                   -- Main image display (either "neovim" or "file")
 			client_id           = "793271441293967371",       -- Use your own Discord application client id (not recommended)
 			log_level           = nil,                        -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
 			debounce_timeout    = 10,                         -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)

@@ -41,15 +41,15 @@ return {
 
 		prettier.setup({
 			bin = "prettierd", -- or `'prettierd'` (v0.23.3+)
-      cli_options = {
-        tab_width = 4,
-      },
+			cli_options = {
+				tab_width = 4,
+			},
 			filetypes = {
 				"css",
 				"graphql",
 				"html",
 				"javascript",
-        "lua",
+				"lua",
 				"javascriptreact",
 				"json",
 				"less",
@@ -60,6 +60,5 @@ return {
 				"yaml",
 			},
 		})
-
 	end,
 }

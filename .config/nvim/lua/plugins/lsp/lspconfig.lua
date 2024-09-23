@@ -76,7 +76,6 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
-		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
@@ -88,16 +87,15 @@ return {
 		end
 
 		mason_lspconfig.setup_handlers({
-      function(server_name) -- default handler (optional)
-					-- https://github.com/neovim/nvim-lspconfig/pull/3232
-					if server_name == "tsserver" then
-						server_name = "ts_ls"
-					end
-					require("lspconfig")[server_name].setup({
-
-						capabilities = capabilities,
-					})
-				end,
+			function(server_name) -- default handler (optional)
+				-- https://github.com/neovim/nvim-lspconfig/pull/3232
+				if server_name == "tsserver" then
+					server_name = "ts_ls"
+				end
+				require("lspconfig")[server_name].setup({
+					capabilities = capabilities,
+				})
+			end,
 			-- default handler for installed servers
 			function(server_name)
 				lspconfig[server_name].setup({
