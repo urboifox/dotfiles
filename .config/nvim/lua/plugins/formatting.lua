@@ -21,6 +21,7 @@ return {
 				liquid = { prettier_command },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				blade = { "blade-formatter" },
 			},
 			-- format_on_save = {
 			-- 	lsp_fallback = true,

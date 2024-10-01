@@ -6,6 +6,13 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
+  init_options = {
+    userLanguages = {
+      eelixir = "html-eex",
+      eruby = "erb",
+      rust = "html",
+    },
+  },
 	opts = {
 		servers = {
 			tsserver = {

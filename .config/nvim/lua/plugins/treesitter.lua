@@ -29,6 +29,7 @@ return {
 				"prisma",
 				"markdown",
 				"cpp",
+        "php",
 				"rust",
 				"markdown_inline",
 				"svelte",
