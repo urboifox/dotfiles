@@ -2,7 +2,7 @@ vim.cmd("let g:netrw_liststyl = 3")
 
 local opt = vim.opt
 
-opt.guicursor = ""
+opt.guicursor = "" -- set the cursor to be block
 
 opt.relativenumber = true
 opt.number = true
