@@ -6,13 +6,13 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
-  init_options = {
-    userLanguages = {
-      eelixir = "html-eex",
-      eruby = "erb",
-      rust = "html",
-    },
-  },
+	init_options = {
+		userLanguages = {
+			eelixir = "html-eex",
+			eruby = "erb",
+			rust = "html",
+		},
+	},
 	opts = {
 		servers = {
 			tsserver = {
@@ -27,6 +27,14 @@ return {
 	config = function()
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
+
+		lspconfig.tailwindcss.setup({
+			settings = {
+				tailwindCSS = {
+					validate = false,
+				},
+			},
+		})
 
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
