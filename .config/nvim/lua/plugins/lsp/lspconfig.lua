@@ -6,13 +6,6 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
-	init_options = {
-		userLanguages = {
-			eelixir = "html-eex",
-			eruby = "erb",
-			rust = "html",
-		},
-	},
 	opts = {
 		servers = {
 			tsserver = {
@@ -136,13 +129,6 @@ return {
 							end,
 						})
 					end,
-				})
-			end,
-			["graphql"] = function()
-				-- configure graphql language server
-				lspconfig["graphql"].setup({
-					capabilities = capabilities,
-					filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 				})
 			end,
 			["emmet_ls"] = function()

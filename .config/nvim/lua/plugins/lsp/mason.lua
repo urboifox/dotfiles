@@ -35,7 +35,7 @@ return {
 				"lua_ls",
 				"graphql",
 				"emmet_ls",
-        "rust_analyzer",
+                "rust_analyzer",
 				"pyright",
 				"clangd",
 			},

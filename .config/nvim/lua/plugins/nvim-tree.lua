@@ -38,12 +38,12 @@ return {
 		})
 
 		-- set keymaps
-		local keymap = vim.keymap -- for conciseness
+		local keymap = vim.keymap
 
 		keymap.set("n", "<C-f>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 		keymap.set(
 			"n",
-			"<leader>ef",
+			"<leader>f.",
 			"<cmd>NvimTreeFindFileToggle<CR>",
 			{ desc = "Toggle file explorer on current file" }
 		) -- toggle file explorer on current file

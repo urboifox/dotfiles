@@ -11,7 +11,7 @@ return {
 				typescript = { prettier_command },
 				javascriptreact = { prettier_command },
 				typescriptreact = { prettier_command },
-				-- svelte = { prettier_command }, -- svelte language server has formatting by default, so i disabled this
+				svelte = { prettier_command }, -- svelte language server has formatting by default, so i disabled this
 				css = { prettier_command },
 				html = { prettier_command },
 				json = { prettier_command },

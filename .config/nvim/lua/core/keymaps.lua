@@ -6,6 +6,8 @@ keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
+keymap.set("n", "<leader>lr", "<cmd>:LspRestart<cr>", { desc = "Restart LSP server" })
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
@@ -66,5 +68,3 @@ keymap.set(
 	"<cmd>silent !tmux neww tmux-sessionizer<CR>",
 	{ desc = "Find projects with tmux sessionizer" }
 )
-
-keymap.set("n", "<leader>f.", "<cmd>:NvimTreeFindFile<cr>")
