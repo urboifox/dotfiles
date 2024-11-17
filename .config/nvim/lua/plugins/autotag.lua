@@ -1,11 +1,11 @@
 return {
-	"windwp/nvim-ts-autotag",
+    'windwp/nvim-ts-autotag',
     config = function()
-        require("nvim-ts-autotag").setup({
+        require('nvim-ts-autotag').setup {
             opts = {
                 enable_close = true,
                 enable_rename = true, -- rename end tag when changing start tag
             },
-        })
-    end
+        }
+    end,
 }
