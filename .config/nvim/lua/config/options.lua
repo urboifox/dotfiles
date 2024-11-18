@@ -17,8 +17,7 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = false -- line wrap
 
--- Enable mouse mode, can be useful for resizing splits for example!
-opt.mouse = ''
+-- Enable mouse mode, can be useful for resizing splits for example! opt.mouse = ''
 
 -- set the cursor to be block
 opt.guicursor = ''

@@ -53,6 +53,9 @@ vim.keymap.set('n', '<leader>lr', '<cmd>:LspRestart<cr>', { desc = 'Restart LSP 
 -- tmux
 vim.keymap.set('n', '<leader>fp', '<cmd>silent !tmux neww tmux-sessionizer<CR>', { desc = 'Find projects with tmux sessionizer' })
 
+-- theme
+vim.keymap.set('n', '<leader>tc', '<cmd>Telescope colorscheme<CR>', { desc = 'Select colorscheme' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights' })
