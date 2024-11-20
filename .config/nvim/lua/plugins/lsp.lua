@@ -14,6 +14,17 @@ return {
         -- Allows extra capabilities provided by nvim-cmp
         'hrsh7th/cmp-nvim-lsp',
     },
+    opts = {
+        servers = {
+            tsserver = {
+                settings = {
+                    completions = {
+                        completeFunctionCalls = false,
+                    },
+                },
+            },
+        },
+    },
     config = function()
         --  This function gets run when an LSP attaches to a particular buffer.
         --    That is to say, every time a new file is opened that is associated with
