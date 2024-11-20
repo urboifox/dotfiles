@@ -31,7 +31,11 @@ return {
                 },
             },
             filters = {
-                custom = { '.DS_Store' },
+                custom = {
+                    '.DS_Store',
+                    'node_modules',
+                    '.git',
+                },
             },
             git = {
                 ignore = false,
