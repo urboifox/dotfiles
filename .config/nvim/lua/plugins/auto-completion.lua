@@ -46,7 +46,25 @@ return { -- Autocompletion
                     luasnip.lsp_expand(args.body)
                 end,
             },
-            completion = { completeopt = 'menu,menuone,noinsert' },
+
+            formatting = {
+                format = function(entry, vim_item)
+                    if entry.completion_item.detail ~= nil and entry.completion_item.detail ~= '' then
+                        vim_item.menu = entry.completion_item.detail
+                    else
+                        vim_item.menu = ({
+                            nvim_lsp = '[LSP]',
+                            luasnip = '[Snippet]',
+                            buffer = '[Buffer]',
+                            path = '[Path]',
+                        })[entry.source.name]
+                    end
+                    return vim_item
+                end,
+                fields = { 'kind', 'abbr', 'menu' },
+                expandable_indicator = false,
+            },
+            -- completion = { completeopt = 'menu,menuone,noinsert' },
 
             -- For an understanding of why these mappings were
             -- chosen, you will need to read `:help ins-completion`
@@ -61,22 +79,11 @@ return { -- Autocompletion
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
-                -- ['<Tab>'] = cmp.mapping.select_next_item(), -- previous suggestion
-                -- ['<S-Tab>'] = cmp.mapping.select_prev_item(), -- next suggestion
-
                 -- Manually trigger a completion from nvim-cmp.
                 --  Generally you don't need this, because nvim-cmp will display
                 --  completions whenever it has completion options available.
-                ['<C-Space>'] = cmp.mapping.complete {},
+                ['<C-Space>'] = cmp.mapping.complete { config = {} },
 
-                -- Think of <c-l> as moving to the right of your snippet expansion.
-                --  So if you have a snippet that's like:
-                --  function $name($args)
-                --    $body
-                --  end
-                --
-                -- <c-l> will move you to the right of each of the expansion locations.
-                -- <c-h> is similar, except moving you backwards.
                 ['<C-l>'] = cmp.mapping(function()
                     if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
@@ -97,7 +104,12 @@ return { -- Autocompletion
                     -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
                     group_index = 0,
                 },
-                { name = 'nvim_lsp' },
+                {
+                    name = 'nvim_lsp',
+                    entry_filter = function(entry)
+                        return require('cmp').lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+                    end,
+                },
                 { name = 'luasnip' },
                 { name = 'path' },
             },
