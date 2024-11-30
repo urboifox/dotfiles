@@ -7,23 +7,8 @@ return {
         'williamboman/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-        -- Useful status updates for LSP.
-        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        { 'j-hui/fidget.nvim', opts = {} },
-
         -- Allows extra capabilities provided by nvim-cmp
         'hrsh7th/cmp-nvim-lsp',
-    },
-    opts = {
-        servers = {
-            tsserver = {
-                settings = {
-                    completions = {
-                        completeFunctionCalls = false,
-                    },
-                },
-            },
-        },
     },
     config = function()
         --  This function gets run when an LSP attaches to a particular buffer.
@@ -134,6 +119,12 @@ return {
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+        -- Restart svelte LSP on ts files change
+        vim.api.nvim_create_autocmd({ 'BufWrite' }, {
+            pattern = { '+page.server.ts', '+page.ts', '+layout.server.ts', '+layout.ts' },
+            command = 'LspRestart svelte',
+        })
+
         -- Enable the following language servers
         --  Add any additional override configuration in the following tables. Available keys are:
         --  - cmd (table): Override the default command used to start the server
@@ -144,6 +135,7 @@ return {
         local servers = {
             -- clangd = {},
             -- gopls = {},
+
             pyright = {},
             rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -152,8 +144,38 @@ return {
             --    https://github.com/pmizio/typescript-tools.nvim
             --
             -- But for many setups, the LSP (`ts_ls`) will work just fine
-            ts_ls = {},
-            --
+            ts_ls = {
+                settings = {
+                    completions = {
+                        completeFunctionCalls = false,
+                    },
+                },
+            },
+
+            emmet_ls = {
+                capabilities = capabilities,
+                filetypes = {
+                    'html',
+                    'typescriptreact',
+                    'javascriptreact',
+                    'css',
+                    'sass',
+                    'scss',
+                    'less',
+                    'svelte',
+                },
+            },
+
+            svelte = {
+                on_attach = function(client)
+                    vim.api.nvim_create_autocmd('BufWritePost', {
+                        pattern = { '*.js', '*.ts' },
+                        callback = function(ctx)
+                            client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.file })
+                        end,
+                    })
+                end,
+            },
 
             lua_ls = {
                 -- cmd = {...},
