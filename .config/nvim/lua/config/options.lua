@@ -5,6 +5,14 @@ local opt = vim.opt
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- prevent commenting the next line to a comment
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = '*',
+    callback = function()
+        vim.opt_local.formatoptions:remove { 'r', 'o' }
+    end,
+})
+
 -- Make line numbers default
 opt.number = true
 opt.relativenumber = true

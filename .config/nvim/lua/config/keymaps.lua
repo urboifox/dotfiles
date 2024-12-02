@@ -12,13 +12,6 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to the top split' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to the right split' })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to the left split' })
 
--- tab management
-vim.keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = 'Open new tab' })
-vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = 'Close current tab' })
-vim.keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = 'Go to next tab' })
-vim.keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' })
-vim.keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' })
-
 -- lines management
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move current line down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move current line up' })
@@ -44,6 +37,8 @@ vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode with jk' })
 -- errors
 vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz', { desc = 'Go to next error' })
 vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz', { desc = 'Go to previous error' })
+
+-- quickfix list
 vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz', { desc = 'Go to quicfix list next entry' })
 vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz', { desc = 'Go to quicfix list previous entry' })
 
