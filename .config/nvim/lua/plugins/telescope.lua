@@ -54,6 +54,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
                     '.DS_Store',
                     '.git',
                     'target',
+                    'vendor'
                 },
                 -- mappings = {
                 --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },

@@ -1,0 +1,24 @@
+import = ["~/.config/alacritty/rose-pine.toml"]
+
+[window]
+decorations = "None"
+padding = { x = 5, y = 5 }
+opacity = 1
+
+dimensions = { columns = 120, lines = 45 }
+
+[font]
+normal = { family = "JetBrains Mono NerdFont", style = "Regular" }
+size = 9
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
+
+[colors.primary]
+# background = "#111111"

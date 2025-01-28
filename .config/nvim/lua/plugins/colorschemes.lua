@@ -14,6 +14,10 @@ return {
                     migrations = true,
                 },
 
+                -- highlight_groups = {
+                --     CursorLine = { bg = '#14111C' },
+                -- },
+
                 styles = {
                     bold = true,
                     italic = true,

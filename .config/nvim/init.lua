@@ -58,7 +58,7 @@ require('lazy').setup({
     --
     -- Use the `dependencies` key to specify the dependencies of a particular plugin
 
-    -- LSP Plugins
+    -- LSP Pluginsgitsign
     {
         -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
         -- used for completion, annotations and signatures of Neovim apis
