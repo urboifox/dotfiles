@@ -215,13 +215,16 @@ for_window [class=".*"] border pixel 0
 # INFO: Startup configuration
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id ~/.screenlayout/dual-monitor.sh
-exec --no-startup-id picom
+exec_always --no-startup-id ~/.screenlayout/dual-monitor.sh
+exec_always --no-startup-id picom
 
 # INFO: Adjust the delay before key repetition starts
 # 250 => delay in ms
 # 25 => chars per second
-exec --no-startup-id xset r rate 250 25
+exec_always --no-startup-id xset r rate 250 25
+
+# INFO: change keyboard layout
+exec_always --no-startup-id "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle"
 
 # INFO: Background image
 exec_always feh --bg-scale ~/.config/wallpapers/samurai.jpg
@@ -230,9 +233,6 @@ exec_always feh --bg-scale ~/.config/wallpapers/samurai.jpg
 bindsym $mod+space exec rofi -show combi
 bindsym $mod+Shift+p exec shutter -s
 
-
-# INFO: change keyboard layout
-exec_always "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle"
 
 # INFO: Set default workspaces for apps
 assign [class="Brave"] $ws1
