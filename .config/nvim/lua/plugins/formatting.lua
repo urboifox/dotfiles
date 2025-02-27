@@ -42,6 +42,7 @@ return {
             typescript = { 'prettier', stop_after_first = true },
             typescriptreact = { 'prettier', stop_after_first = true },
             javascriptreact = { 'prettier', stop_after_first = true },
+            html = { 'prettier', stop_after_first = true },
         },
     },
 }

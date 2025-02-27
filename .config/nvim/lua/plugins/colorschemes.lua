@@ -5,6 +5,8 @@ return {
         priority = 1000,
         config = function()
             require('rose-pine').setup {
+                dim_inactive_windows = false,
+                extend_background_behind_borders = true,
                 variant = 'main',
                 dark_variant = 'main',
 

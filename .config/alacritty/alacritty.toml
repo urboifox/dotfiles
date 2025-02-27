@@ -7,6 +7,8 @@ opacity = 1
 
 dimensions = { columns = 120, lines = 45 }
 
+# startup_mode = "Fullscreen"
+
 [font]
 normal = { family = "JetBrains Mono NerdFont", style = "Regular" }
 size = 9

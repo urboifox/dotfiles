@@ -121,7 +121,7 @@ return {
 
         -- Restart svelte LSP on ts files change
         vim.api.nvim_create_autocmd({ 'BufWrite' }, {
-            pattern = { '+page.server.ts', '+page.ts', '+layout.server.ts', '+layout.ts' },
+            pattern = { '+page.server.ts', '+page.ts', '+layout.server.ts', '+layout.ts', '*.svelte', '*.svelte.ts' },
             command = 'LspRestart svelte',
         })
 
@@ -169,7 +169,7 @@ return {
             svelte = {
                 on_attach = function(client)
                     vim.api.nvim_create_autocmd('BufWritePost', {
-                        pattern = { '*.js', '*.ts' },
+                        pattern = { '*.js', '*.ts', '*.svelte.ts' },
                         callback = function(ctx)
                             client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.file })
                         end,
@@ -211,6 +211,8 @@ return {
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
         require('mason-lspconfig').setup {
+            ensure_installed = {},
+            automatic_installation = true,
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
