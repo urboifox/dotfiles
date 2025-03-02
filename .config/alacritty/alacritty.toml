@@ -1,4 +1,4 @@
-# import = ["~/.config/alacritty/monochrome.toml"]
+# import = ["~/.config/alacritty/nordic.toml"]
 import = ["~/.config/alacritty/rose-pine.toml"]
 
 [window]
