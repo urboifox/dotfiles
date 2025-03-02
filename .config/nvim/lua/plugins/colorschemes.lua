@@ -2,7 +2,7 @@ return {
     {
         'rose-pine/neovim',
         name = 'rose-pine',
-        priority = 1000,
+        -- priority = 1000,
         config = function()
             require('rose-pine').setup {
                 dim_inactive_windows = false,
@@ -26,7 +26,22 @@ return {
                     transparency = true,
                 },
             }
-            vim.cmd 'colorscheme rose-pine'
+
+            -- vim.cmd 'colorscheme rose-pine'
+        end,
+    },
+    {
+        'AlexvZyl/nordic.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require 'nordic'.load {
+                transparent = {
+                    bg = true,
+                },
+                bold_keywords = true,
+                italic_comments = true,
+            }
         end,
     },
 }

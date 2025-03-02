@@ -121,7 +121,7 @@ return {
 
         -- Restart svelte LSP on ts files change
         vim.api.nvim_create_autocmd({ 'BufWrite' }, {
-            pattern = { '+page.server.ts', '+page.ts', '+layout.server.ts', '+layout.ts', '*.svelte', '*.svelte.ts' },
+            pattern = { '+page.server.ts', '+page.ts', '+layout.server.ts', '+layout.ts', '*.svelte.ts' },
             command = 'LspRestart svelte',
         })
 
@@ -175,6 +175,14 @@ return {
                         end,
                     })
                 end,
+                handlers = {
+                    ['textDocument/definition'] = function(err, result, ctx, config)
+                        if type(result) == 'table' then
+                            result = { result[1] }
+                        end
+                        vim.lsp.handlers['textDocument/definition'](err, result, ctx, config)
+                    end,
+                },
             },
 
             lua_ls = {
