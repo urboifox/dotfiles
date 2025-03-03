@@ -12,7 +12,7 @@ dimensions = { columns = 120, lines = 45 }
 
 [font]
 normal = { family = "JetBrains Mono NerdFont", style = "Regular" }
-size = 9
+size = 8
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
