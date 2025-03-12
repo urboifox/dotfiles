@@ -7,16 +7,11 @@ return { -- Highlight, edit, and navigate code
         ensure_installed = {
             'bash',
             'c',
-            'diff',
             'php',
             'html',
             'lua',
-            'luadoc',
             'markdown',
             'markdown_inline',
-            'query',
-            'vim',
-            'vimdoc',
         },
         -- Autoinstall languages that are not installed
         auto_install = true,

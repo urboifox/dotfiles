@@ -1,6 +1,6 @@
 configuration{
     modi: "run,window,combi";
-    icon-theme: "Oranchelo";
+    icon-theme: "";
     show-icons: true;
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
