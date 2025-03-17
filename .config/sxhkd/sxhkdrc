@@ -1,0 +1,41 @@
+super + Return
+    alacritty
+
+# application launcher
+super + d
+    dmenu_run
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# quit/restart bspwm
+super + shift + {q,r}
+    bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }w
+    bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+    bspc desktop -l next
+
+# volume controls
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+    amixer set Master {5%-,5%+,toggle}
+
+# quit bspwm
+super + alt + Escape
+    bspc quit
+
+# take a screenshot
+super + shift + p
+    shutter -s

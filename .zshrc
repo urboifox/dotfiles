@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Custom Aliases
 alias nv='nvim'
+alias v='nvim'
 alias mx='tmux'
 alias mxs='tmux new -s'
 alias mxa='tmux attach'
@@ -143,6 +144,9 @@ export EDITOR="vim"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Set keyboard layout
+setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle # Set keyboard layout (i.e us, ara)
 
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

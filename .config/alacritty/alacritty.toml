@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/rose-pine.toml"]
 [window]
 decorations = "None"
 padding = { x = 5, y = 5 }
-opacity = 1
+opacity = 0.9
 
 dimensions = { columns = 120, lines = 45 }
 
