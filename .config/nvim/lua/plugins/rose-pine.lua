@@ -16,7 +16,8 @@ return {
             },
 
             highlight_groups = {
-                CursorLine = { bg = '#222222' },
+                -- CursorLine = { bg = '#222222' },
+                CursorLine = { bg = 'None' },
             },
 
             styles = {
