@@ -4,14 +4,24 @@
 ##############   Config   #############
 #######################################
 
+
+if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
+  xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x123 --rotate normal --output HDMI-1 --mode 1920x1200 --pos 1920x0 --rotate normal --output DP-1 --off --output DP-2 --off
+fi
+
 # load sxhkd for hotkeys
 pgrep -x sxhkd > /dev/null || sxhkd &
 # each window's name
-bspc monitor -d I II III IV V VI VII VIII IX X
+# bspc monitor -d I II III IV V VI VII VIII IX X
+
+# set the default desktop for each monitor
+bspc monitor eDP-1 -d I II
+bspc monitor HDMI-1 -d III IV V VI VII VIII IX X
+
 picom & # compositor
 
 polybar & # status bar
-feh --bg-scale ~/.config/wallpapers/wallpaper.png & # Wallpaper
+feh --bg-scale ~/.config/wallpapers/wallpaper-2.png & # Wallpaper
 # INFO: Adjust the delay before key repetition starts
 # 250 => delay in ms
 # 25 => chars per second
