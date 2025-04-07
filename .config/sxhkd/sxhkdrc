@@ -37,5 +37,5 @@ super + alt + Escape
     bspc quit
 
 # take a screenshot
-super + shift + p
-    shutter -s
+super + shift + s
+    flameshot gui

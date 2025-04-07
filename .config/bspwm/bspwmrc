@@ -21,7 +21,7 @@ bspc monitor HDMI-1 -d III IV V VI VII VIII IX X
 picom & # compositor
 
 polybar & # status bar
-feh --bg-scale ~/.config/wallpapers/wallpaper-2.png & # Wallpaper
+feh --bg-scale ~/.config/wallpapers/wallpaper.png & # Wallpaper
 # INFO: Adjust the delay before key repetition starts
 # 250 => delay in ms
 # 25 => chars per second
