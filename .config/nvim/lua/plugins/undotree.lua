@@ -4,7 +4,6 @@ return {
         vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle undo tree' })
 
         local opt = vim.opt
-
         -- presist undo
         opt.swapfile = false
         opt.backup = false

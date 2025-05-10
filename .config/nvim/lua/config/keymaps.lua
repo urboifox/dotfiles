@@ -16,6 +16,7 @@ vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to the left split' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move current line down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move current line up' })
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join bottom line with current line' })
+vim.keymap.set('n', 'd_', 'd^', { noremap = true, desc = 'Delete to the first non-blank character of the line' })
 
 -- scrolling configuration
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half page down' })

@@ -11,12 +11,20 @@ fi
 
 # load sxhkd for hotkeys
 pgrep -x sxhkd > /dev/null || sxhkd &
+
 # each window's name
 # bspc monitor -d I II III IV V VI VII VIII IX X
 
 # set the default desktop for each monitor
-bspc monitor eDP-1 -d I II
-bspc monitor HDMI-1 -d III IV V VI VII VIII IX X
+
+# if HDMI-1 monitor is not connected, make eDO-1 take all screens
+if [[ $(xrandr -q | grep 'HDMI-1 connected') == "" ]]; then
+  bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
+# if HDMI-1 monitor is connected, make eDO-1 take only the primary screen
+else
+  bspc monitor eDP-1 -d I II
+  bspc monitor HDMI-1 -d III IV V VI VII VIII IX X
+fi
 
 picom & # compositor
 
