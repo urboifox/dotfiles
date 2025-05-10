@@ -5,12 +5,7 @@ return {
         'nvim-lua/plenary.nvim',
         'nvim-treesitter/nvim-treesitter',
         -- Optional, for markdown rendering with render-markdown.nvim
-        -- {
-        --     'MeanderingProgrammer/render-markdown.nvim',
-        --     opts = {
-        --         file_types = { 'markdown' },
-        --     },
-        --     ft = { 'markdown' },
+        'MeanderingProgrammer/render-markdown.nvim',
         -- Show response in popup or split
         mode = 'split',
         -- Default formatter

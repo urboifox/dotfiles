@@ -5,6 +5,7 @@ return {
     ---@type render.md.UserConfig
     opts = {
         preset = 'none', -- Avoids default styles that may include backgrounds
+        file_types = { 'markdown' },
         code = {
             disable_background = true,
             highlight_border = false,

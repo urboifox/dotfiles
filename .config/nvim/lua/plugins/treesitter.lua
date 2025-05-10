@@ -4,6 +4,9 @@ return { -- Highlight, edit, and navigate code
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     opts = {
         auto_install = true,
+        ensure_installed = {
+            'hurl',
+        },
         highlight = {
             enable = true,
             -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
