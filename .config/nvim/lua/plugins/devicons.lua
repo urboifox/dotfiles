@@ -4,7 +4,7 @@ return {
         opts = {},
         config = function()
             local devicons = require 'nvim-web-devicons'
-            require('nvim-web-devicons').setup {
+            devicons.setup {
                 -- color_icons = false,
             }
         end,
