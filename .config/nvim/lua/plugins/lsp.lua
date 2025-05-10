@@ -36,8 +36,20 @@ return {
             svelte_capabilities.workspace.didChangeWatchedFiles = false
 
             -- INFO: setup servers
-            lspconfig.lua_ls.setup { capabilities = capabilities }
             lspconfig.svelte.setup { capabilities = svelte_capabilities }
+            lspconfig.lua_ls.setup { capabilities = capabilities }
+            lspconfig.ts_ls.setup { capabilities = capabilities }
+            lspconfig.emmet_ls.setup = {
+                capabilities = capabilities,
+                filetypes = {
+                    'html',
+                    'typescriptreact',
+                    'javascriptreact',
+                    'css',
+                    'scss',
+                    'svelte',
+                },
+            }
 
             -- INFO: keybindings
             vim.api.nvim_create_autocmd('LspAttach', {
