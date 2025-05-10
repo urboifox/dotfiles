@@ -5,7 +5,7 @@ return { -- Highlight, edit, and navigate code
     opts = {
         auto_install = true,
         ensure_installed = {
-            'hurl',
+            'lua'
         },
         highlight = {
             enable = true,
