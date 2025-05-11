@@ -13,6 +13,13 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- add http extension to filetype
+vim.filetype.add({
+  extension = {
+    http = "http",
+  },
+})
+
 -- Make line numbers default
 opt.number = true
 opt.relativenumber = true
