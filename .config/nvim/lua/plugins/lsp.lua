@@ -39,6 +39,7 @@ return {
             lspconfig.svelte.setup { capabilities = svelte_capabilities }
             lspconfig.lua_ls.setup { capabilities = capabilities }
             lspconfig.ts_ls.setup { capabilities = capabilities }
+            lspconfig.tailwindcss.setup { capabilities = capabilities }
             lspconfig.emmet_ls.setup = {
                 capabilities = capabilities,
                 filetypes = {
