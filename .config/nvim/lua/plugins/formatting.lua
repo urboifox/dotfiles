@@ -15,6 +15,13 @@ return {
     opts = {
         notify_on_error = false,
         format_on_save = false,
+        formatters = {
+            kulala = {
+                command = 'kulala-fmt',
+                args = { 'format', '$FILENAME' },
+                stdin = false,
+            },
+        },
         formatters_by_ft = {
             lua = { 'stylua' },
 
@@ -28,6 +35,7 @@ return {
             javascriptreact = { 'prettier', stop_after_first = true },
             html = { 'prettier', stop_after_first = true },
             css = { 'prettier', stop_after_first = true },
+            http = { 'kulala', stop_after_first = true },
         },
     },
 }
