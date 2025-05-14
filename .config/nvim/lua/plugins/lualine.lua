@@ -9,6 +9,7 @@ return {
         lualine.setup {
             options = {
                 theme = 'auto',
+                extensions = { 'nvim-tree' },
 
                 section_separators = { left = '', right = '' },
                 component_separators = { left = '', right = '' },
@@ -17,7 +18,7 @@ return {
                 icon = '',
 
                 -- all colors transparent
-                disabled_filetypes = { 'alpha', 'dashboard', 'NvimTree', 'Outline' },
+                disabled_filetypes = { 'alpha', 'dashboard', 'Outline' },
                 inactive_sections = {
                     lualine_a = { 'filename' },
                     lualine_b = { 'branch' },
