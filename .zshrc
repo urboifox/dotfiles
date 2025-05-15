@@ -117,6 +117,7 @@ alias lh='ls -lah'
 alias la='ls -a'
 alias cna='npx create-next-app@latest'
 alias lg='lazygit'
+alias cava='TERM=xterm-256color cava'
 
 bindkey -s ^f "tmux-sessionizer\n"
 
