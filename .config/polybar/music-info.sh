@@ -1,9 +1,25 @@
 #!/bin/bash
 
-player_status="$(playerctl status 2> /dev/null)"
+# Try Spotify first
+spotify_status="$(playerctl --player=spotify status 2>/dev/null)"
 
-if [[ "$player_status" = "Playing" || "$player_status" = "Paused" ]]; then
-    echo "$(playerctl metadata title) - $(playerctl metadata artist)"
+if [[ "$spotify_status" == "Playing" || "$spotify_status" == "Paused" ]]; then
+    title="$(playerctl --player=spotify metadata title 2>/dev/null)"
+    artist="$(playerctl --player=spotify metadata artist 2>/dev/null)"
+    echo "$title - $artist"
 else
-    echo ""
+    # Fallback: first available non-spotify player
+    fallback_player=$(playerctl -l 2>/dev/null | grep -v spotify | head -n 1)
+    if [[ -n "$fallback_player" ]]; then
+        status="$(playerctl --player="$fallback_player" status 2>/dev/null)"
+        if [[ "$status" == "Playing" || "$status" == "Paused" ]]; then
+            title="$(playerctl --player="$fallback_player" metadata title 2>/dev/null)"
+            artist="$(playerctl --player="$fallback_player" metadata artist 2>/dev/null)"
+            echo "$title - $artist"
+        else
+            echo ""
+        fi
+    else
+        echo ""
+    fi
 fi
