@@ -5,6 +5,9 @@ local opt = vim.opt
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt.title = true
+vim.opt.titlestring = 'NVIM: %F' -- %t %m %r
+
 -- prevent commenting the next line to a comment
 vim.api.nvim_create_autocmd('FileType', {
     pattern = '*',
@@ -14,11 +17,11 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- add http extension to filetype
-vim.filetype.add({
-  extension = {
-    http = "http",
-  },
-})
+vim.filetype.add {
+    extension = {
+        http = 'http',
+    },
+}
 
 -- Make line numbers default
 opt.number = true
