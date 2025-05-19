@@ -24,6 +24,10 @@ if [[ "$title" == *NVIM* ]]; then
     if [[ "$title" == NVIM:* ]]; then
         file_path="${title#NVIM: }"
         file_name=$(basename "$file_path" 2>/dev/null || echo "nvim")
+        # if file_name equals "NvimTree_1" make it "Nvim Tree"
+        if [[ "$file_name" == "NvimTree_1" ]]; then
+            file_name="NvimTree"
+        fi
         echo "$NVIM_ICON $file_name"
     else
         dir=$(pwd | sed "s|$HOME|~|")
