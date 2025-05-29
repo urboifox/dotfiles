@@ -7,7 +7,7 @@
 /* Rose Pine colors implemented by kathy*/
 
 * {
-    font:   "Work Sans Medium Neon Regular 12";
+    font:   "JetBrains Mono 12";
 
     bg0:     #232136;
     bg1:     #393552;

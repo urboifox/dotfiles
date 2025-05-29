@@ -31,6 +31,7 @@
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "render-markdown.nvim": { "branch": "main", "commit": "a1b0988f5ab26698afb56b9c2f0525a4de1195c1" },
   "rose-pine": { "branch": "main", "commit": "491a0c77abc7ecb955c27a974091a5968232995f" },
+  "snipe.nvim": { "branch": "main", "commit": "2a1b738dfae8502e6162eddfc774da65ed404142" },
   "supermaven-nvim": { "branch": "main", "commit": "07d20fce48a5629686aefb0a7cd4b25e33947d50" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },

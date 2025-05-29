@@ -40,6 +40,15 @@ return { -- Autocompletion
         local luasnip = require 'luasnip'
         luasnip.config.setup {}
 
+        vim.keymap.set('n', '<C-Space>', function()
+            -- Move to end of current word, enter insert mode, and trigger cmp
+            local keys = vim.api.nvim_replace_termcodes('ea', true, false, true)
+            vim.api.nvim_feedkeys(keys, 'n', false)
+            vim.schedule(function()
+                cmp.complete()
+            end)
+        end, { desc = 'Jump to end of word and trigger completion' })
+
         cmp.setup {
             snippet = {
                 expand = function(args)
