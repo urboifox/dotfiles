@@ -1,5 +1,6 @@
 return {
     'mistweaverco/kulala.nvim',
+    branch = 'develop',
     ft = { 'http', 'rest' },
     config = function()
         local kulala = require 'kulala'

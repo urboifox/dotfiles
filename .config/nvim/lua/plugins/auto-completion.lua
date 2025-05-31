@@ -33,6 +33,8 @@ return { -- Autocompletion
         --  into multiple repos for maintenance purposes.
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
+        'tailwind-tools',
+        'onsails/lspkind-nvim',
     },
     config = function()
         -- See `:help cmp`
@@ -44,9 +46,6 @@ return { -- Autocompletion
             -- Move to end of current word, enter insert mode, and trigger cmp
             local keys = vim.api.nvim_replace_termcodes('ea', true, false, true)
             vim.api.nvim_feedkeys(keys, 'n', false)
-            vim.schedule(function()
-                cmp.complete()
-            end)
         end, { desc = 'Jump to end of word and trigger completion' })
 
         cmp.setup {
@@ -54,6 +53,11 @@ return { -- Autocompletion
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
                 end,
+            },
+            formatting = {
+                format = require('lspkind').cmp_format {
+                    before = require('tailwind-tools.cmp').lspkind_format,
+                },
             },
             -- completion = { completeopt = 'menu,menuone,noinsert' },
 

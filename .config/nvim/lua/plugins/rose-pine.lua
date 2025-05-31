@@ -18,8 +18,8 @@ return {
             highlight_groups = {
                 CursorLine = { bg = 'None' },
                 -- StatusLine = { fg = "love", bg = "muted", blend = 15 },
-                VertSplit = { fg = "muted", bg = "muted" },
-                Visual = { fg = "base", bg = "text", inherit = false },
+                VertSplit = { fg = 'muted', bg = 'muted' },
+                Visual = { fg = 'base', bg = 'text', inherit = false },
             },
 
             groups = {

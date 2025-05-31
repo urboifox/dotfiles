@@ -3,7 +3,7 @@ import = ["~/.config/alacritty/rose-pine-moon.toml"]
 [window]
 decorations = "None"
 padding = { x = 5, y = 5 }
-opacity = 0.8
+opacity = 0.7
 
 dimensions = { columns = 120, lines = 45 }
 
@@ -16,6 +16,10 @@ size = 8
 [cursor]
 style = { shape = "Block", blinking = "Always" }
 blink_interval = 400
+
+[colors.cursor]
+text = "#e0def4"
+cursor = "#827f97"
 
 [selection]
 save_to_clipboard = true
