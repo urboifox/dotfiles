@@ -6,6 +6,7 @@ return {
     opts = {
         preset = 'none', -- Avoids default styles that may include backgrounds
         file_types = { 'markdown' },
+        render_modes = { 'n', 'c', 't' },
         code = {
             disable_background = true,
             highlight_border = false,
