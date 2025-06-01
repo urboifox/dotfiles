@@ -11,6 +11,8 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to the bottom split' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to the top split' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to the right split' })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to the left split' })
+vim.keymap.set('n', '<C-o>', '<cmd>bprevious<CR>', { desc = 'Go to previous buffer' })
+vim.keymap.set('n', '<C-i>', '<cmd>bnext<CR>', { desc = 'Go to next buffer' })
 
 -- lines management
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move current line down' })
