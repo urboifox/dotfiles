@@ -33,10 +33,11 @@ return {
                 default_tags = { 'daily' },
             },
             note_frontmatter_func = function(note)
+                local created = (note.metadata and note.metadata.created) or os.date '%Y-%m-%d'
                 return {
                     id = note.id,
-                    tags = {},
-                    created = os.date '%Y-%m-%d',
+                    tags = note.tags,
+                    created = created,
                 }
             end,
             note_id_func = function(title)
