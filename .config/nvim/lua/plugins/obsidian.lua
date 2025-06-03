@@ -21,8 +21,12 @@ return {
                     path = '~/workspace/notes',
                 },
             },
-            follow_url_func = function(file_path)
-                return vim.cmd('!xdg-open ' .. file_path)
+            follow_url_func = function(url)
+                vim.fn.jobstart({ 'xdg-open', url }, {
+                    detach = true,
+                    stdout_buffered = false,
+                    stderr_buffered = false,
+                })
             end,
             ui = {
                 enable = false,
