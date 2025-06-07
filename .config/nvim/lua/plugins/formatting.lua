@@ -15,13 +15,6 @@ return {
     opts = {
         notify_on_error = false,
         format_on_save = false,
-        formatters = {
-            kulala = {
-                command = 'kulala-fmt',
-                args = { 'format', '$FILENAME' },
-                stdin = false,
-            },
-        },
         formatters_by_ft = {
             lua = { 'stylua' },
 

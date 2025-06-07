@@ -6,8 +6,11 @@ return {
         local kulala = require 'kulala'
         kulala.setup {
             global_keymaps = true,
+            lsp = {
+                formatter = true,
+            },
             ui = {
-                display_mode = 'float',
+                display_mode = 'split', -- 'split', 'float'
             },
         }
 
