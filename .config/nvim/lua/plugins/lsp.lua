@@ -19,38 +19,42 @@ return {
     },
     {
         'neovim/nvim-lspconfig',
-        config = function()
+        opts = {
+            servers = {
+                lua_ls = {},
+                svelte = {},
+                ts_ls = {},
+                tailwindcss = {},
+                emmet_ls = {
+                    filetypes = {
+                        'html',
+                        'typescriptreact',
+                        'javascriptreact',
+                        'css',
+                        'scss',
+                        'svelte',
+                    },
+                },
+            },
+        },
+        config = function(_, opts)
             local lspconfig = require 'lspconfig'
             local telescope = require 'telescope.builtin'
 
-            -- LSP servers and clients are able to communicate to each other what features they support.
-            --  By default, Neovim doesn't support everything that is in the LSP specification.
-            --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-            --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+            for server, config in pairs(opts.servers) do
+                -- config.capabilities = vim.tbl_deep_extend('force', config.capabilities, require('cmp_nvim_lsp').default_capabilities())
+                config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
 
-            -- INFO: https://github.com/sveltejs/language-tools/issues/2008#issuecomment-2148860446
-            local svelte_capabilities = vim.deepcopy(capabilities)
-            ---@diagnostic disable-next-line: assign-type-mismatch
-            svelte_capabilities.workspace.didChangeWatchedFiles = false
-
-            -- INFO: setup servers
-            lspconfig.svelte.setup { capabilities = svelte_capabilities }
-            lspconfig.lua_ls.setup { capabilities = capabilities }
-            lspconfig.ts_ls.setup { capabilities = capabilities }
-            lspconfig.tailwindcss.setup { capabilities = capabilities }
-            lspconfig.emmet_ls.setup = {
-                capabilities = capabilities,
-                filetypes = {
-                    'html',
-                    'typescriptreact',
-                    'javascriptreact',
-                    'css',
-                    'scss',
-                    'svelte',
-                },
-            }
+                if server == 'svelte' then
+                    -- INFO: https://github.com/sveltejs/language-tools/issues/2008#issuecomment-2148860446
+                    config.capabilities.workspace = config.capabilities.workspace or {}
+                    ---@diagnostic disable-next-line: assign-type-mismatch
+                    config.capabilities.workspace.didChangeWatchedFiles = false
+                    lspconfig[server].setup(config)
+                else
+                    lspconfig[server].setup(config)
+                end
+            end
 
             -- INFO: keybindings
             vim.api.nvim_create_autocmd('LspAttach', {
