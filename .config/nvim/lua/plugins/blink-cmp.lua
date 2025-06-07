@@ -40,6 +40,8 @@ return {
             enabled = true,
             trigger = {
                 show_on_trigger_character = false,
+                show_on_insert = false,
+                show_on_accept = false,
             },
             window = {
                 border = 'rounded',
