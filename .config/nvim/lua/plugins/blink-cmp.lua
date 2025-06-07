@@ -42,6 +42,10 @@ return {
                 show_on_trigger_character = false,
                 show_on_insert = false,
                 show_on_accept = false,
+                show_on_insert_on_trigger_character = false,
+                show_on_accept_on_trigger_character = false,
+                show_on_keyword = false,
+                blocked_trigger_characters = { '(', ')', ',' },
             },
             window = {
                 border = 'rounded',
