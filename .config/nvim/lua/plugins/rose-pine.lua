@@ -80,6 +80,10 @@ return {
             },
         }
 
+        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+            border = 'rounded', -- options: "single", "double", "rounded", "solid", "shadow", or custom table
+        })
+
         vim.cmd 'colorscheme rose-pine'
     end,
 }

@@ -4,8 +4,7 @@ return {
     dependencies = { 'rafamadriz/friendly-snippets' },
 
     -- use a release tag to download pre-built binaries
-    version = '1.*',
-    -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+    version = '1.*', -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
     -- build = 'cargo build --release',
     -- If you use nix, you can build from source using latest nightly rust with:
     -- build = 'nix run .#build-plugin',
@@ -37,6 +36,16 @@ return {
             ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
         },
 
+        signature = {
+            enabled = true,
+            trigger = {
+                show_on_trigger_character = false,
+            },
+            window = {
+                border = 'rounded',
+            },
+        },
+
         appearance = {
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
             -- Adjusts spacing to ensure icons are aligned
@@ -44,7 +53,17 @@ return {
         },
 
         -- (Default) Only show the documentation popup when manually triggered
-        completion = { documentation = { auto_show = false } },
+        completion = {
+            documentation = {
+                auto_show = false,
+                window = {
+                    border = 'rounded',
+                },
+            },
+            menu = {
+                border = 'rounded',
+            },
+        },
 
         -- Default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -61,6 +80,22 @@ return {
     },
     opts_extend = { 'sources.default' },
     config = function(_, opts)
-        require('blink-cmp').setup(opts)
+        local blink = require 'blink-cmp'
+        blink.setup(opts)
+
+        vim.keymap.set({ 'i', 'n' }, '<C-k>', function()
+            if blink.is_signature_visible() then
+                blink.hide_signature()
+            else
+                blink.show_signature()
+            end
+        end, { desc = 'Show signature help' })
+
+        vim.api.nvim_set_hl(0, 'BlinkCmpDoc', { bg = 'NONE' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpDocBorder', { fg = '#6e6a86', bg = 'NONE' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpDocSeparator', { bg = 'NONE', fg = '#6e6a86' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpBorder', { fg = '#6e6a86', bg = 'NONE' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#6e6a86', bg = 'NONE' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { fg = '#1f1d2e', bg = '#f6c177' })
     end,
 }
