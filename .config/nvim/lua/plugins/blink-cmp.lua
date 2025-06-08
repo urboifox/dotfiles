@@ -9,6 +9,8 @@ return {
     -- If you use nix, you can build from source using latest nightly rust with:
     -- build = 'nix run .#build-plugin',
 
+    exclude = { 'typr' },
+
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -102,6 +104,7 @@ return {
         vim.api.nvim_set_hl(0, 'BlinkCmpDocSeparator', { bg = 'NONE', fg = '#6e6a86' })
         vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpBorder', { fg = '#6e6a86', bg = 'NONE' })
         vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#6e6a86', bg = 'NONE' })
-        vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { fg = '#1f1d2e', bg = '#f6c177' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { fg = '#191724', bg = '#e0def4' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpLabel', { fg = '#cecacd' })
     end,
 }
