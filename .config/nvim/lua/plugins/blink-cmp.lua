@@ -9,7 +9,7 @@ return {
     -- If you use nix, you can build from source using latest nightly rust with:
     -- build = 'nix run .#build-plugin',
 
-    exclude = { 'typr' },
+    event = { 'LspAttach' },
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -63,13 +63,32 @@ return {
         -- (Default) Only show the documentation popup when manually triggered
         completion = {
             documentation = {
-                auto_show = false,
+                auto_show = true,
                 window = {
                     border = 'rounded',
                 },
             },
             menu = {
                 border = 'rounded',
+                auto_show = true,
+                min_width = 34,
+                draw = {
+                    treesitter = { 'lsp' },
+                    padding = 1,
+                    gap = 2,
+                    columns = {
+                        { 'kind_icon', 'label', gap = 1 },
+                        { 'label_description' },
+                    },
+                    components = {
+                        label_description = {
+                            text = function(ctx)
+                                return ctx.item.labelDetails and ctx.item.labelDetails.description or ctx.item.detail or ''
+                            end,
+                            highlight = 'BlinkCmpLabelDescription',
+                        },
+                    },
+                },
             },
         },
 
@@ -106,5 +125,6 @@ return {
         vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#6e6a86', bg = 'NONE' })
         vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { fg = '#191724', bg = '#e0def4' })
         vim.api.nvim_set_hl(0, 'BlinkCmpLabel', { fg = '#cecacd' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpLabelDescription', { fg = '#6e6a86' })
     end,
 }

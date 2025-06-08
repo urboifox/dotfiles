@@ -31,7 +31,6 @@ return {
                         'typescriptreact',
                         'javascriptreact',
                         'css',
-                        'scss',
                         'svelte',
                     },
                 },
