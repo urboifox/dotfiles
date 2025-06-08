@@ -40,7 +40,7 @@ return {
             local lspconfig = require 'lspconfig'
 
             for server, config in pairs(opts.servers) do
-                -- config.capabilities = vim.tbl_deep_extend('force', config.capabilities, require('cmp_nvim_lsp').default_capabilities())
+                -- config.capabilities = require('cmp_nvim_lsp').default_capabilities()
                 config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
 
                 if server == 'svelte' then

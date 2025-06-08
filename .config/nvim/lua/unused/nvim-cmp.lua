@@ -33,7 +33,6 @@ return { -- Autocompletion
         --  into multiple repos for maintenance purposes.
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
-        'tailwind-tools',
         'onsails/lspkind-nvim',
     },
     config = function()
@@ -57,6 +56,11 @@ return { -- Autocompletion
             formatting = {
                 format = require('lspkind').cmp_format {
                     before = require('tailwind-tools.cmp').lspkind_format,
+                },
+            },
+            window = {
+                completion = {
+                    border = 'rounded',
                 },
             },
             -- completion = { completeopt = 'menu,menuone,noinsert' },

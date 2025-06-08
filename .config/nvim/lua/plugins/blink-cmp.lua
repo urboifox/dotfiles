@@ -9,8 +9,6 @@ return {
     -- If you use nix, you can build from source using latest nightly rust with:
     -- build = 'nix run .#build-plugin',
 
-    event = { 'LspAttach' },
-
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -62,6 +60,11 @@ return {
 
         -- (Default) Only show the documentation popup when manually triggered
         completion = {
+            accept = {
+                auto_brackets = {
+                    enabled = false,
+                },
+            },
             documentation = {
                 auto_show = true,
                 window = {
@@ -74,12 +77,9 @@ return {
                 min_width = 34,
                 draw = {
                     treesitter = { 'lsp' },
-                    padding = 1,
+                    padding = 2,
                     gap = 2,
-                    columns = {
-                        { 'kind_icon', 'label', gap = 1 },
-                        { 'label_description' },
-                    },
+                    columns = { { 'kind_icon', 'label', 'label_description', gap = 1 }, { 'kind' } },
                     components = {
                         label_description = {
                             text = function(ctx)
@@ -96,6 +96,11 @@ return {
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
+            providers = {
+                lsp = {
+                    opts = { tailwind_color_icon = 'π' },
+                },
+            },
         },
 
         -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
