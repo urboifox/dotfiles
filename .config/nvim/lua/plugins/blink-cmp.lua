@@ -128,7 +128,7 @@ return {
         vim.api.nvim_set_hl(0, 'BlinkCmpDocSeparator', { bg = 'NONE', fg = '#6e6a86' })
         vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpBorder', { fg = '#6e6a86', bg = 'NONE' })
         vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#6e6a86', bg = 'NONE' })
-        vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { fg = '#191724', bg = '#e0def4' })
+        vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { fg = '#191724', bg = '#e0def4', bold = true })
         vim.api.nvim_set_hl(0, 'BlinkCmpLabel', { fg = '#cecacd' })
         vim.api.nvim_set_hl(0, 'BlinkCmpLabelDescription', { fg = '#6e6a86' })
     end,

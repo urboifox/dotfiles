@@ -41,6 +41,12 @@ return {
             },
         }
 
+        -- highlight selected file cursor line
+        --[[ vim.api.nvim_set_hl(0, 'NvimTreeCursorLine', {
+            bg = '#e0def4',
+            fg = '#191724',
+        }) ]]
+
         -- set keymaps
         local keymap = vim.keymap
 

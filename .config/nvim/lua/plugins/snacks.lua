@@ -22,7 +22,7 @@ return {
         },
         toggle = { enabled = false },
         indent = { enabled = false },
-        input = { enabled = true },
+        input = { enabled = false },
         notifier = {
             enabled = true,
             timeout = 3000,
