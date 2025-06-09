@@ -28,7 +28,7 @@ return {
             timeout = 3000,
         },
         picker = {
-            enabled = true,
+            enabled = false,
             layout = {
                 reverse = true,
             },
@@ -38,12 +38,6 @@ return {
         scroll = { enabled = false },
         statuscolumn = { enabled = false },
         words = { enabled = false },
-        styles = {
-            notification = {
-                -- wo = { wrap = true }, -- Wrap notifications
-                -- relative = 'editor',
-            },
-        },
     },
     keys = {
         -- explorer
@@ -216,16 +210,6 @@ return {
     },
     config = function(_, opts)
         require('snacks').setup(opts)
-
-        vim.api.nvim_create_autocmd('FileType', {
-            pattern = 'snacks_picker_input',
-            callback = function()
-                vim.api.nvim_set_hl(0, 'Visual', {
-                    fg = '#c4a7e7',
-                    bg = 'none',
-                })
-            end,
-        })
 
         -- LSP-integrated rename files
         local prev = { new_name = '', old_name = '' } -- Prevents duplicate events
