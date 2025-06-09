@@ -19,6 +19,7 @@ return {
                 CursorLine = { bg = 'None' },
                 -- StatusLine = { fg = "love", bg = "muted", blend = 15 },
                 VertSplit = { fg = 'muted', bg = 'muted' },
+                -- Visual = { fg = 'iris', bg = 'none', inherit = false },
                 Visual = { fg = 'base', bg = 'text', inherit = false },
             },
 

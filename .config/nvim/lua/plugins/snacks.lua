@@ -217,6 +217,16 @@ return {
     config = function(_, opts)
         require('snacks').setup(opts)
 
+        vim.api.nvim_create_autocmd('FileType', {
+            pattern = 'snacks_picker_input',
+            callback = function()
+                vim.api.nvim_set_hl(0, 'Visual', {
+                    fg = '#c4a7e7',
+                    bg = 'none',
+                })
+            end,
+        })
+
         -- LSP-integrated rename files
         local prev = { new_name = '', old_name = '' } -- Prevents duplicate events
         vim.api.nvim_create_autocmd('User', {
