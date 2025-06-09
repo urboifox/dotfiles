@@ -28,7 +28,7 @@ return {
             timeout = 3000,
         },
         picker = {
-            enabled = false,
+            enabled = true,
             layout = {
                 reverse = true,
             },
@@ -41,13 +41,6 @@ return {
     },
     keys = {
         -- explorer
-        {
-            '<leader>e',
-            function()
-                Snacks.explorer.open()
-            end,
-            desc = 'File Explorer',
-        },
         {
             '<leader>f.',
             function()
