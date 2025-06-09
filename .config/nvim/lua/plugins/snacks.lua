@@ -27,7 +27,12 @@ return {
             enabled = true,
             timeout = 3000,
         },
-        picker = { enabled = true },
+        picker = {
+            enabled = true,
+            layout = {
+                reverse = true,
+            },
+        },
         quickfile = { enabled = true },
         scope = { enabled = false },
         scroll = { enabled = false },

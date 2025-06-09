@@ -75,6 +75,7 @@ return {
                 border = 'rounded',
                 auto_show = true,
                 min_width = 34,
+                max_height = 60,
                 draw = {
                     treesitter = { 'lsp' },
                     padding = 2,
@@ -98,7 +99,26 @@ return {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
             providers = {
                 lsp = {
+                    name = 'lsp',
+                    enabled = true,
+                    module = 'blink.cmp.sources.lsp',
+                    kind = 'LSP',
+                    score_offset = 1000, -- the higher the number, the higher the priority
                     opts = { tailwind_color_icon = 'π' },
+                },
+                snippets = {
+                    name = 'snippets',
+                    enabled = true,
+                    module = 'blink.cmp.sources.snippets',
+                    score_offset = 900, -- the higher the number, the higher the priority
+                },
+                buffer = {
+                    name = 'Buffer',
+                    enabled = true,
+                    max_items = 3,
+                    module = 'blink.cmp.sources.buffer',
+                    min_keyword_length = 2,
+                    score_offset = 15, -- the higher the number, the higher the priority
                 },
             },
         },
@@ -108,14 +128,16 @@ return {
         -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
         --
         -- See the fuzzy documentation for more information
-        fuzzy = { implementation = 'prefer_rust_with_warning' },
+        -- fuzzy = {
+        --     implementation = 'prefer_rust_with_warning',
+        -- },
     },
-    opts_extend = { 'sources.default' },
+    -- opts_extend = { 'sources.default' },
     config = function(_, opts)
         local blink = require 'blink-cmp'
         blink.setup(opts)
 
-        vim.keymap.set({ 'i', 'n' }, '<C-k>', function()
+        vim.keymap.set({ 'i', 'n' }, '<C-s>', function()
             if blink.is_signature_visible() then
                 blink.hide_signature()
             else
