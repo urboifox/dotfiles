@@ -179,6 +179,13 @@ return {
             desc = 'Goto T[y]pe Definition',
         },
         {
+            '<leader>rn',
+            function()
+                vim.lsp.buf.rename()
+            end,
+            desc = 'LSP Rename',
+        },
+        {
             '<leader>ss',
             function()
                 Snacks.picker.lsp_symbols()

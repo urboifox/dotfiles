@@ -58,14 +58,11 @@ return {
                 border = 'rounded',
                 auto_show = true,
             },
-        },
-
-        sources = {
-            transform_items = function(_, items)
-                return vim.tbl_filter(function(item)
-                    return item.kind ~= require('blink.cmp.types').CompletionItemKind.Snippet
-                end, items)
-            end,
+            list = {
+                selection = {
+                    preselect = false,
+                },
+            },
         },
     },
     -- opts_extend = { 'sources.default' },

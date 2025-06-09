@@ -25,15 +25,6 @@ return {
                 svelte = {},
                 ts_ls = {},
                 tailwindcss = {},
-                emmet_ls = {
-                    filetypes = {
-                        'html',
-                        'typescriptreact',
-                        'javascriptreact',
-                        'css',
-                        'svelte',
-                    },
-                },
             },
         },
         config = function(_, opts)
