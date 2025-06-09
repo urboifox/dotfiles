@@ -19,7 +19,7 @@ return {
                 CursorLine = { bg = 'None' },
                 -- StatusLine = { fg = "love", bg = "muted", blend = 15 },
                 VertSplit = { fg = 'muted', bg = 'muted' },
-                -- Visual = { fg = 'iris', bg = 'none', inherit = false },
+                -- Visual = { bg = 'muted', inherit = false },
                 Visual = { fg = 'base', bg = 'text', inherit = false },
             },
 
@@ -54,17 +54,7 @@ return {
                 h6 = 'foam',
             },
 
-            before_highlight = function(group, highlight, palette)
-                -- Disable all undercurls
-                -- if highlight.undercurl then
-                --     highlight.undercurl = false
-                -- end
-                --
-                -- Change palette colour
-                -- if highlight.fg == palette.pine then
-                --     highlight.fg = palette.foam
-                -- end
-            end,
+            before_highlight = function(group, highlight, palette) end,
 
             palette = {
                 -- Override the builtin palette per variant
@@ -82,7 +72,7 @@ return {
         }
 
         vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-            border = 'rounded', -- options: "single", "double", "rounded", "solid", "shadow", or custom table
+            border = 'rounded',
         })
 
         vim.cmd 'colorscheme rose-pine'

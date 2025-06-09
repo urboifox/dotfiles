@@ -1,7 +1,7 @@
 return {
     'mistweaverco/kulala.nvim',
     branch = 'develop',
-    ft = { 'http', 'rest' },
+    ft = { 'http' },
     config = function()
         local kulala = require 'kulala'
         kulala.setup {
@@ -13,8 +13,5 @@ return {
                 display_mode = 'split', -- 'split', 'float'
             },
         }
-
-        vim.keymap.set({ 'n', 'v' }, '<leader>rs', kulala.run, { desc = 'Run request' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>ra', kulala.run_all, { desc = 'Run all requests' })
     end,
 }

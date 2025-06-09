@@ -4,9 +4,8 @@ return {
         require('nvim-ts-autotag').setup {
             opts = {
                 enable_close = true,
-                enable_rename = true, -- rename end tag when changing start tag
+                enable_rename = true,
             },
         }
     end,
 }
-
