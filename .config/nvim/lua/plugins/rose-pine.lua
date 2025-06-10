@@ -20,7 +20,7 @@ return {
                 -- StatusLine = { fg = "love", bg = "muted", blend = 15 },
                 VertSplit = { fg = 'muted', bg = 'muted' },
                 -- Visual = { fg = 'iris', bg = 'none', inherit = false },
-                Visual = { bg = 'base', inherit = false },
+                Visual = { bg = 'text', fg = 'base', inherit = false },
             },
 
             groups = {
