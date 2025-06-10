@@ -67,11 +67,16 @@ return {
             end,
 
             palette = {
-                -- Override the builtin palette per variant
-                -- moon = {
-                --     base = '#18191a',
-                --     overlay = '#363738',
-                -- },
+                -- Override the main variant palette with tmux-mapped colors
+                main = {
+                    text = '#D7D7FF',
+                    love = '#FF5F87',
+                    gold = '#FFAF87',
+                    rose = '#FFAFAF',
+                    pine = '#5F8787',
+                    foam = '#AFD7D7',
+                    iris = '#D7AFD7',
+                },
             },
 
             styles = {
