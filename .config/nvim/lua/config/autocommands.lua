@@ -1,8 +1,4 @@
---  See `:help lua-guide-autocommands`
---
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -11,7 +7,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
--- Remove qf item when pressing dd
+-- Remove quick fix item when pressing dd
 local function remove_qf_item()
     local qf_list = vim.fn.getqflist()
     local curqfidx = vim.fn.line '.'
@@ -29,3 +25,4 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.keymap.set('n', 'dd', ':RemoveQFItem<CR>', { buffer = true, silent = true })
     end,
 })
+--
