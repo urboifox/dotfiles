@@ -31,7 +31,7 @@ fi
 
 picom & # compositor
 
-feh --bg-scale ~/.config/wallpapers/wallpaper.png & # Wallpaper
+feh --bg-scale ~/.config/wallpapers/wallpaper-6.jpg & # Wallpaper
 # INFO: Adjust the delay before key repetition starts
 # 250 => delay in ms
 # 25 => chars per second
@@ -54,6 +54,7 @@ bspc config focus_follows_pointer true
 ##############   Colors   #############
 #######################################
 
-bspc config focused_border_color "#9ccfd8"
+# bspc config focused_border_color "#9ccfd8"
+bspc config focused_border_color "#fefefe"
 bspc config normal_border_color "#6e6a86"
 bspc rule -a zoom state=floating

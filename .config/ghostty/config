@@ -8,4 +8,4 @@ shell-integration-features = no-cursor
 cursor-text = "#e0def4"
 cursor-color = "#827f97"
 mouse-hide-while-typing = true
-
+confirm-close-surface = false

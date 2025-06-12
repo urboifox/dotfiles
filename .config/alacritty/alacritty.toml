@@ -28,4 +28,4 @@ save_to_clipboard = true
 hide_when_typing = true
 
 [colors.primary]
-# background = "#111111"
+background = "#111111"

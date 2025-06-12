@@ -16,7 +16,8 @@ return {
             },
 
             highlight_groups = {
-                CursorLine = { bg = 'None' },
+                -- CursorLine = { bg = '#21202e' },
+                CursorLine = { bg = '#222222' },
                 -- StatusLine = { fg = "love", bg = "muted", blend = 15 },
                 VertSplit = { fg = 'muted', bg = 'muted' },
                 -- Visual = { fg = 'iris', bg = 'none', inherit = false },

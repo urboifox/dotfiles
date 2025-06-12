@@ -1,5 +1,5 @@
 super + Return
-    ghostty
+    alacritty
 
 # application launcher
 # super + d
