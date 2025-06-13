@@ -22,7 +22,7 @@
     text_icon_padding = 25
     frame_width = 2
     # frame_color = "#c4a7e7"
-    frame_color = "#deeeed"
+    frame_color = "#708090"
     gap_size = 20
     separator_color = frame
     sort = yes
@@ -68,7 +68,7 @@
     # foreground = "#ebbcba"
     # frame_color = "#c4a7e7"
     foreground = "#708090"
-    frame_color = "#deeeed"
+    frame_color = "#708090"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -78,7 +78,7 @@
     # foreground = "#ebbcba"
     # highlight = "#c4a7e7"
     foreground = "#708090"
-    frame_color = "#deeeed"
+    frame_color = "#708090"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -88,7 +88,7 @@
     # foreground = "#ebbcba"
     # highlight = "#c4a7e7"
     foreground = "#708090"
-    frame_color = "#deeeed"
+    frame_color = "#708090"
     timeout = 0
 
 [brightness]
