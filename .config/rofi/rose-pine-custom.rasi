@@ -11,9 +11,9 @@
 
     bg0:     #11111199;
     bg1:     #11111199;
-    fg0:     #e0def4;
+    fg0:     #555555;
 
-    accent-color:     #708090;
+    accent-color:     #2a2a2a33;
     urgent-color:     #eb6f92;
 
     background-color:   transparent;
@@ -42,7 +42,8 @@ prompt, entry, element-icon, element-text {
 }
 
 prompt {
-    text-color: @accent-color;
+    text-color: @fg0;
+    enabled: false;
 }
 
 textbox {
@@ -81,7 +82,7 @@ element selected {
 
 element selected normal, element selected active {
     background-color:   @accent-color;
-    text-color: #2a2a2a;
+    text-color: #D7D7FF;
 }
 
 element selected urgent {
