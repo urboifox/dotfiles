@@ -21,7 +21,8 @@
     horizontal_padding = 5
     text_icon_padding = 25
     frame_width = 2
-    frame_color = "#c4a7e7"
+    # frame_color = "#c4a7e7"
+    frame_color = "#deeeed"
     gap_size = 20
     separator_color = frame
     sort = yes
@@ -63,25 +64,31 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1f1d2e"
-    foreground = "#ebbcba"
-    frame_color = "#c4a7e7"
+    background = "#1f1f1f"
+    # foreground = "#ebbcba"
+    # frame_color = "#c4a7e7"
+    foreground = "#708090"
+    frame_color = "#deeeed"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#1f1d2e"
-    foreground = "#ebbcba"
-    highlight = "#c4a7e7"
+    background = "#1f1f1f"
+    # foreground = "#ebbcba"
+    # highlight = "#c4a7e7"
+    foreground = "#708090"
+    frame_color = "#deeeed"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#1f1d2e"
-    foreground = "#ebbcba"
-    frame_color = "#c4a7e7"
+    background = "#1f1f1f"
+    # foreground = "#ebbcba"
+    # highlight = "#c4a7e7"
+    foreground = "#708090"
+    frame_color = "#deeeed"
     timeout = 0
 
 [brightness]
