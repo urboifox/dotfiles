@@ -22,6 +22,9 @@ return {
                 VertSplit = { fg = 'muted', bg = 'muted' },
                 -- Visual = { fg = 'iris', bg = 'none', inherit = false },
                 Visual = { bg = 'text', fg = 'base', inherit = false },
+                LspReferenceText = { bg = '#444444' },
+                LspReferenceRead = { bg = '#444444' },
+                LspReferenceWrite = { bg = '#444444' },
             },
 
             groups = {
@@ -78,6 +81,15 @@ return {
                     foam = '#AFD7D7',
                     iris = '#D7AFD7',
                 },
+                moon = {
+                    text = '#D7D7FF',
+                    love = '#D70000',
+                    gold = '#FFAA88',
+                    rose = '#FFAFAF',
+                    pine = '#5F8787',
+                    foam = '#AFD7D7',
+                    iris = '#D7AFD7',
+                },
             },
 
             styles = {
@@ -91,6 +103,6 @@ return {
             border = 'rounded', -- options: "single", "double", "rounded", "solid", "shadow", or custom table
         })
 
-        vim.cmd 'colorscheme rose-pine'
+        vim.cmd 'colorscheme rose-pine-moon'
     end,
 }
