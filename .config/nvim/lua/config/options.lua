@@ -8,6 +8,8 @@ vim.g.maplocalleader = ' '
 vim.opt.title = true
 vim.opt.titlestring = 'NVIM: %F' -- %t %m %r
 
+vim.opt.termguicolors = true
+
 -- prevent commenting the next line to a comment
 vim.api.nvim_create_autocmd('FileType', {
     pattern = '*',

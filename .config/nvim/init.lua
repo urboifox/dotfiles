@@ -24,6 +24,7 @@ require('lazy').setup({
     },
     { 'Bilal2453/luvit-meta', lazy = true },
     { import = 'plugins' },
+    { import = 'plugins/themes' },
 }, {
     change_detection = {
         notify = false,
