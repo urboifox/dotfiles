@@ -32,7 +32,7 @@ return {
                 link = 'iris',
                 panel = 'surface',
 
-                error = 'love',
+                error = '#d70000',
                 hint = 'iris',
                 info = 'foam',
                 note = 'pine',
@@ -83,7 +83,7 @@ return {
                 },
                 moon = {
                     text = '#D7D7FF',
-                    love = '#D70000',
+                    love = '#FF5F87',
                     gold = '#FFAA88',
                     rose = '#FFAFAF',
                     pine = '#5F8787',
