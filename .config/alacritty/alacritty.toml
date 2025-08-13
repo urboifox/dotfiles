@@ -10,7 +10,7 @@ dimensions = { columns = 120, lines = 45 }
 # startup_mode = "Fullscreen"
 
 [font]
-normal = { family = "JetBrains Mono NerdFont", style = "Regular" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size = 8
 
 [cursor]

@@ -14,6 +14,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 pkill -x polybar
 polybar & # status bar
+xset s off -dpms s noblank
 
 # each window's name
 # bspc monitor -d I II III IV V VI VII VIII IX X

@@ -103,8 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Custom Aliases
-alias nv='nvim'
-alias v='nvim'
 alias mx='tmux'
 alias mxs='tmux new -s'
 alias mxa='tmux attach'
@@ -115,7 +113,6 @@ alias mxk='tmux kill-session -t'
 alias ll='ls -l'
 alias lh='ls -lah'
 alias la='ls -a'
-alias cna='npx create-next-app@latest'
 alias lg='lazygit'
 alias cava='TERM=xterm-256color cava'
 

@@ -25,6 +25,15 @@ return {
                 svelte = {},
                 ts_ls = {},
                 tailwindcss = {},
+                intelephense = {},
+                rust_analyzer = {
+                    diagnostics = {
+                        enable = true,
+                        experimental = {
+                            enable = true,
+                        },
+                    },
+                },
             },
         },
         config = function(_, opts)
