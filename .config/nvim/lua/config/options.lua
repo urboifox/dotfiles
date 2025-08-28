@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 vim.g.mapleader = ' '
@@ -30,12 +32,12 @@ opt.number = true
 opt.relativenumber = true
 
 -- tabs & indentation
-opt.tabstop = 4 -- spaces or tabs
+opt.tabstop = 4       -- spaces or tabs
 opt.softtabstop = 4
-opt.shiftwidth = 4 -- spaces for indent width
-opt.expandtab = true -- expand tab to spaces
+opt.shiftwidth = 4    -- spaces for indent width
+opt.expandtab = true  -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
-opt.wrap = false -- line wrap
+opt.wrap = false      -- line wrap
 
 -- Enable mouse mode, can be useful for resizing splits for example! opt.mouse = ''
 
@@ -86,7 +88,7 @@ opt.scrolloff = 20
 
 -- Folding
 vim.o.foldcolumn = '0' -- '0' is not bad
-vim.o.foldlevel = 1 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 1    -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.foldclose = 'all'

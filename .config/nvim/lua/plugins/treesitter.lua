@@ -7,6 +7,11 @@ return {
         ensure_installed = {
             'lua',
             'http',
+            'svelte',
+            'html',
+            'css',
+            'javascript',
+            'typescript'
         },
         highlight = {
             enable = true,

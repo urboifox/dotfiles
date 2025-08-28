@@ -1,4 +1,4 @@
-background = #14121c
+background = #111111
 background-opacity = 0.7
 theme = rose-pine-moon
 window-decoration = none
@@ -8,5 +8,7 @@ shell-integration-features = no-cursor
 cursor-text = "#e0def4"
 cursor-color = "#827f97"
 mouse-hide-while-typing = true
-font-family = "DejaVu Sans Mono"
+font-family = ""
+font-family = "JetBrainsMono Nerd Font"
 confirm-close-surface = false
+window-vsync = true

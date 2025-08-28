@@ -1,5 +1,5 @@
 super + Return
-    alacritty
+    ghostty
 
 # application launcher
 # super + d
@@ -56,4 +56,4 @@ super + alt + Escape
 
 # take a screenshot
 super + shift + s
-    flameshot gui
+    flameshot gui -r | xclip -selection clipboard -t image/png
