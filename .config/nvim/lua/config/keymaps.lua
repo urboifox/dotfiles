@@ -37,7 +37,7 @@ vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('n', 'Q', '<nop>')
 
 -- commands
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make the current file executable' })
+-- vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make the current file executable' })
 
 -- LSP
 vim.keymap.set('n', '<leader>lr', '<cmd>:LspRestart<cr>', { desc = 'Restart LSP server' })

@@ -56,4 +56,4 @@ super + alt + Escape
 
 # take a screenshot
 super + shift + s
-    flameshot gui -r | xclip -selection clipboard -t image/png
+    flameshot gui

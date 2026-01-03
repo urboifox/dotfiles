@@ -36,6 +36,10 @@ feh --bg-scale ~/.config/wallpapers/wallpaper-6.jpg & # Wallpaper
 # Set keyboard layout
 setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle # Set keyboard layout (i.e us, ara)
 
+# Setup touchpad
+xinput set-prop 13 "libinput Natural Scrolling Enabled" 1
+xinput set-prop 13 "libinput Tapping Enabled" 1
+
 # INFO: Adjust the delay before key repetition starts
 # 250 => delay in ms
 # 30 => chars per second
