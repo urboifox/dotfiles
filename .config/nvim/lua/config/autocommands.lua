@@ -19,6 +19,18 @@ end
 
 vim.api.nvim_create_user_command('RemoveQFItem', remove_qf_item, {})
 
+-- Neovim ships ftplugin for svelte but no syntax/svelte.vim and no vim.treesitter.start()
+-- (unlike e.g. lua). Start Tree-sitter here so highlighting matches ensure_installed.
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'svelte',
+    callback = function(ev)
+        local buf = ev.buf
+        vim.treesitter.start(buf)
+        vim.b[buf].undo_ftplugin = (vim.b[buf].undo_ftplugin or '')
+            .. ' | lua vim.treesitter.stop()'
+    end,
+})
+
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'qf',
     callback = function()
