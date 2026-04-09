@@ -1,0 +1,141 @@
+{
+  "a6335949-4465-4b71-926c-4a52d34bc9c0": {
+    "id": "a6335949-4465-4b71-926c-4a52d34bc9c0",
+    "name": "Better Find Bar",
+    "description": "Improves the find bar, making it floating with theme match and customization.",
+    "homepage": "https://github.com/RobotoSkunk/zen-better-findbar",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a6335949-4465-4b71-926c-4a52d34bc9c0/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a6335949-4465-4b71-926c-4a52d34bc9c0/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a6335949-4465-4b71-926c-4a52d34bc9c0/image.png",
+    "author": "RobotoSkunk",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a6335949-4465-4b71-926c-4a52d34bc9c0/preferences.json",
+    "version": "1.5.1",
+    "tags": [
+      "find",
+      "bar",
+      "search",
+      "searchbar",
+      "find-bar",
+      "search-bar"
+    ],
+    "createdAt": "2024-11-24",
+    "updatedAt": "2026-02-12",
+    "enabled": true
+  },
+  "58649066-2b6f-4a5b-af6d-c3d21d16fc00": {
+    "id": "58649066-2b6f-4a5b-af6d-c3d21d16fc00",
+    "name": "Private Mode Highlighting",
+    "description": "This theme adds a configurable background, border and an icon to any private browsing window.",
+    "homepage": "https://github.com/danm36/zen-browser-private-browsing-toolbar-highlighting",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/58649066-2b6f-4a5b-af6d-c3d21d16fc00/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/58649066-2b6f-4a5b-af6d-c3d21d16fc00/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/58649066-2b6f-4a5b-af6d-c3d21d16fc00/image.png",
+    "author": "danm36",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/58649066-2b6f-4a5b-af6d-c3d21d16fc00/preferences.json",
+    "version": "1.0.5",
+    "tags": [
+      "Private Browsing"
+    ],
+    "createdAt": "2024-08-09",
+    "updatedAt": "2025-10-25",
+    "enabled": true
+  },
+  "ad97bb70-0066-4e42-9b5f-173a5e42c6fc": {
+    "id": "ad97bb70-0066-4e42-9b5f-173a5e42c6fc",
+    "name": "SuperPins",
+    "description": "This Zen Mod enhances pinned tabs/Essentials, by making some UI/UX changes.",
+    "homepage": "https://github.com/CosmoCreeper/Zen-Themes/tree/main/SuperPins",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/image.png",
+    "author": "CosmoCreeper",
+    "version": "1.7.0",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/preferences.json",
+    "tags": [
+      "tabs"
+    ],
+    "createdAt": "2024-08-28",
+    "updatedAt": "2026-01-28",
+    "enabled": true
+  },
+  "253a3a74-0cc4-47b7-8b82-996a64f030d5": {
+    "id": "253a3a74-0cc4-47b7-8b82-996a64f030d5",
+    "name": "Floating History",
+    "description": "Improves the history tab by matching the browser theme, make it floating, more responsive, and allow placing it on either side.",
+    "homepage": "https://github.com/ahmaadaziz/zen-floating-history",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/253a3a74-0cc4-47b7-8b82-996a64f030d5/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/253a3a74-0cc4-47b7-8b82-996a64f030d5/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/253a3a74-0cc4-47b7-8b82-996a64f030d5/image.png",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/253a3a74-0cc4-47b7-8b82-996a64f030d5/preferences.json",
+    "author": "ahmaadaziz",
+    "createdAt": "2024-10-12",
+    "updatedAt": "2025-07-15",
+    "version": "2.2.0",
+    "tags": [
+      "history"
+    ],
+    "enabled": true
+  },
+  "6c122084-c4ec-4c9e-8cc5-3d87c3a089cb": {
+    "id": "6c122084-c4ec-4c9e-8cc5-3d87c3a089cb",
+    "name": "NavBar Margin",
+    "description": "Adds some top- and bottom-margin to the navbar so it doesn't look too tight.",
+    "homepage": "",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/6c122084-c4ec-4c9e-8cc5-3d87c3a089cb/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/6c122084-c4ec-4c9e-8cc5-3d87c3a089cb/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/6c122084-c4ec-4c9e-8cc5-3d87c3a089cb/image.png",
+    "author": "jusnim",
+    "version": "1.0.1",
+    "tags": [],
+    "createdAt": "2024-12-03",
+    "updatedAt": "2025-07-31",
+    "enabled": true
+  },
+  "cb15abdb-0514-4e09-8ce5-722cf1f4a20f": {
+    "id": "cb15abdb-0514-4e09-8ce5-722cf1f4a20f",
+    "name": "Hide Extension Name",
+    "description": "Hides the name of the extension on tabs loaded from the extension",
+    "homepage": "https://github.com/ch4og/zenbrowser-themes/tree/main/Hide%20Extension%20Name",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/cb15abdb-0514-4e09-8ce5-722cf1f4a20f/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/cb15abdb-0514-4e09-8ce5-722cf1f4a20f/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/cb15abdb-0514-4e09-8ce5-722cf1f4a20f/image.png",
+    "author": "ch4og",
+    "version": "1.0.0",
+    "tags": [],
+    "createdAt": "2024-08-24",
+    "updatedAt": "2025-01-26",
+    "enabled": true
+  },
+  "a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec": {
+    "id": "a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec",
+    "name": "Cleaned URL bar",
+    "description": "Cleans up zen's URL bar.",
+    "homepage": "https://github.com/Dinno-DEV/zen-cleaned-url-bar",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec/image.png",
+    "author": "Dinno-DEV",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec/preferences.json",
+    "version": "1.0.4",
+    "tags": [],
+    "createdAt": "2024-11-01",
+    "updatedAt": "2025-10-05",
+    "enabled": true
+  },
+  "642854b5-88b4-4c40-b256-e035532109df": {
+    "id": "642854b5-88b4-4c40-b256-e035532109df",
+    "name": "Transparent Zen",
+    "description": "Make the Zen Browser's tab background transparent, get smooth animations and more. Enable  features in mod settings and visit the homepage below to learn more about the features. 👇",
+    "homepage": "https://www.sameerasw.com/zen",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/642854b5-88b4-4c40-b256-e035532109df/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/642854b5-88b4-4c40-b256-e035532109df/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/642854b5-88b4-4c40-b256-e035532109df/image.png",
+    "author": "sameerasw",
+    "version": "1.17.16",
+    "tags": [],
+    "createdAt": "2025-02-04",
+    "updatedAt": "2026-03-11",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/642854b5-88b4-4c40-b256-e035532109df/preferences.json",
+    "enabled": true
+  }
+}
