@@ -9,7 +9,7 @@ sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch || true
 sudo apt update
 
 sudo apt install -y \
-    git fastfetch stow fzf cava rofi picom feh \
+    git fastfetch stow fzf cava rofi picom feh fontconfig \
     bspwm sxhkd polybar tmux tty-clock xclip build-essential \
 
 # lazygit
@@ -69,12 +69,13 @@ if [ "$SHELL" != "$(which zsh)" ]; then
 fi
 
 # fonts
-sudo apt install fontconfig
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-mkdir -p $HOME/.local/share/fonts
-unzip Meslo.zip -d $HOME/.local/share/fonts
-rm $HOME/.local/share/fonts/*Windows*
-rm Meslo.zip
+tmp="$(mktemp -d)"
+curl -L \
+  -o "$tmp/font.tar.xz" \
+  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+mkdir -p ~/.local/share/fonts
+tar -xf "$tmp/font.tar.xz" -C ~/.local/share/fonts
 fc-cache -fv
+rm -rf "$tmp"
 
 echo "Installation finished! Reboot or log out to see changes."
