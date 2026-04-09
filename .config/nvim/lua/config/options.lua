@@ -12,14 +12,6 @@ vim.opt.titlestring = 'NVIM: %F' -- %t %m %r
 
 vim.opt.termguicolors = true
 
--- prevent commenting the next line to a comment
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = '*',
-    callback = function()
-        vim.opt_local.formatoptions:remove { 'r', 'o' }
-    end,
-})
-
 -- add http extension to filetype
 vim.filetype.add {
     extension = {
@@ -76,9 +68,6 @@ opt.splitbelow = true
 --  and `:help 'listchars'`
 opt.list = true
 opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
--- Preview substitutions live, as you type!
-opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 opt.cursorline = true

@@ -1,6 +1,7 @@
 background = #111111
 background-opacity = 0.7
-theme = Rose Pine Moon
+# theme = Rose Pine Moon
+theme = Black Metal (Bathory)
 window-decoration = none
 window-padding-y = 4
 cursor-style = block

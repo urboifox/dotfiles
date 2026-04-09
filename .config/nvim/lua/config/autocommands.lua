@@ -25,4 +25,11 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.keymap.set('n', 'dd', ':RemoveQFItem<CR>', { buffer = true, silent = true })
     end,
 })
---
+
+-- prevent commenting the next line to a comment
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = '*',
+    callback = function()
+        vim.opt_local.formatoptions:remove { 'r', 'o' }
+    end,
+})
