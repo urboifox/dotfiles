@@ -9,8 +9,8 @@ sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch || true
 sudo apt update
 
 sudo apt install -y \
-    git fastfetch stow fzf cava rofi picom \
-    bspwm sxhkd polybar tmux tty-clock xclip build-essential
+    git fastfetch stow fzf cava rofi picom feh \
+    bspwm sxhkd polybar tmux tty-clock xclip build-essential \
 
 # lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
@@ -32,6 +32,13 @@ stow -t "$HOME" --restow .
 # zsh config
 cp -f .zshrc "$HOME"
 
+# nvim
+if ! command -v nvim >/dev/null; then
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+    chmod u+x nvim-linux-x86_64.appimage
+    sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+fi
+
 # ghostty
 if ! command -v ghostty >/dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
@@ -52,6 +59,8 @@ fi
 if [ ! -d "$HOME/.nvm" ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 fi
+
+# neovim
 
 # change default shell to zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
