@@ -7,29 +7,8 @@ vim.pack.add({
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/mason-org/mason.nvim",
     "https://github.com/mason-org/mason-lspconfig.nvim",
-    "https://github.com/nvim-treesitter/nvim-treesitter",
 })
 
--- Treesitter
-require("nvim-treesitter").setup({
-    auto_install = true,
-    ensure_installed = {
-        "lua",
-        "svelte",
-        "typescript",
-        "css",
-        "html",
-        "javascript",
-        "json",
-        "markdown",
-    },
-    highlight = {
-        enable = true,
-    },
-    indent = { enable = true },
-})
-
--- LSP
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {

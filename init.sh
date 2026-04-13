@@ -9,7 +9,7 @@ sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch || true
 sudo apt update
 
 sudo apt install -y \
-    git fastfetch stow fzf cava rofi picom feh fontconfig \
+    git fastfetch stow fzf cava rofi picom feh fontconfig flameshot \
     bspwm sxhkd polybar tmux tty-clock xclip build-essential \
 
 # lazygit
