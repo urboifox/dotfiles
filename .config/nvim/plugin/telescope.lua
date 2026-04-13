@@ -38,7 +38,8 @@ vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search diagnost
 vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Search Recent Files" })
 vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
 
-vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto definition" })
+-- vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto definition" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto definition" })
 vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Goto references" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
