@@ -1,12 +1,33 @@
 vim.pack.add({
-    { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/nvim-telescope/telescope.nvim" },
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/nvim-telescope/telescope.nvim",
+    "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
 })
 
-require("telescope").setup({
+local telescope = require("telescope")
+
+telescope.setup({
     defaults = {
         file_ignore_patterns = { "node_modules", ".git", "target", "vendor" },
     },
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    once = true,
+    callback = function()
+        local dir = vim.fn.stdpath("data") .. "/site/pack/core/opt/telescope-fzf-native.nvim"
+        if not vim.loop.fs_stat(dir .. "/build/libfzf.so") then
+            local cwd = vim.fn.getcwd()
+            vim.fn.chdir(dir)
+            vim.fn.system(
+                vim.loop.os_uname().sysname:match("Windows")
+                        and { "cmake", "-S.", "-Bbuild", "-DCMAKE_BUILD_TYPE=Release" }
+                    or { "make" }
+            )
+            vim.fn.chdir(cwd)
+        end
+        pcall(require("telescope").load_extension, "fzf")
+    end,
 })
 
 local builtin = require("telescope.builtin")

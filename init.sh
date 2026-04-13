@@ -60,8 +60,6 @@ if [ ! -d "$HOME/.nvm" ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 fi
 
-# neovim
-
 # change default shell to zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
     echo "Changing default shell to zsh..."
