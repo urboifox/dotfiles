@@ -19,6 +19,9 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/downl
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 
+# dust
+curl -sSfL https://raw.githubusercontent.com/bootandy/dust/refs/heads/master/install.sh | sh
+
 # repo
 if [ ! -d "$DOTFILES_DIR" ]; then
     git clone https://github.com/urboifox/dotfiles.git "$DOTFILES_DIR"

@@ -22,5 +22,5 @@ require("oil").setup({
     },
 })
 
-vim.keymap.set("n", "<C-f>", "<cmd>Oil --float<CR>", { desc = "Open explorer in float window" })
+vim.keymap.set("n", "<C-f>", "<cmd>Oil<CR>", { desc = "Open explorer in float window" })
 vim.keymap.set("n", "<leader>f.", "<cmd>Oil<CR>", { desc = "Open current directory in explorer" })
