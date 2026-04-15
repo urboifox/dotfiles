@@ -6,11 +6,12 @@ DOTFILES_DIR="$HOME/dotfiles"
 
 # packages
 sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch || true
+sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
 
 sudo apt install -y \
-    git fastfetch stow fzf cava rofi picom feh fontconfig flameshot \
-    bspwm sxhkd polybar tmux tty-clock xclip build-essential \
+    git fastfetch stow fzf cava rofi picom feh fontconfig flameshot vlc \
+    bspwm sxhkd polybar tmux tty-clock xclip build-essential obs-studio \
 
 # lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
