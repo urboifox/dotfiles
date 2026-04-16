@@ -10,6 +10,8 @@ require("oil").setup({
             end,
             desc = "Jump to project root",
         },
+        ["<C-l>"] = false,
+        ["<C-h>"] = false,
     },
     view_options = {
         show_hidden = true,
