@@ -16,7 +16,7 @@ require("conform").setup({
         javascriptreact = { "prettier", stop_after_first = true },
         html = { "prettier", stop_after_first = true },
         css = { "prettier", stop_after_first = true },
-        http = { "kulala", stop_after_first = true },
+        http = { "kulala-fmt", stop_after_first = true },
     },
 })
 
