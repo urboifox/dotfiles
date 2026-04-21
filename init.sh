@@ -10,7 +10,7 @@ sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
 
 sudo apt install -y \
-    git fastfetch stow fzf cava rofi picom feh fontconfig flameshot vlc light playerctl \
+    git fastfetch stow fzf cava rofi picom feh fontconfig flameshot vlc light playerctl blueman \
     bspwm sxhkd polybar tmux tty-clock xclip build-essential obs-studio pavucontrol xdotool \
 
 # lazygit
