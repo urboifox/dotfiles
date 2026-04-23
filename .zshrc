@@ -20,6 +20,8 @@ alias lh='ls -lah'
 alias la='ls -a'
 alias lg='lazygit'
 alias cava='TERM=xterm-256color cava'
+alias clock='tty-clock -C 4 -c -s'
+alias matrix='cmatrix -s -b -a -C magenta'
 
 # Set tmux sessionizer shortcut
 bindkey -s ^f "tmux-sessionizer\n"

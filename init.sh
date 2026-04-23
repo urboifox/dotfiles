@@ -11,7 +11,7 @@ sudo apt update
 
 sudo apt install -y \
     git fastfetch stow fzf cava rofi picom feh fontconfig flameshot vlc light playerctl blueman \
-    bspwm sxhkd polybar tmux tty-clock xclip build-essential obs-studio pavucontrol xdotool \
+    bspwm sxhkd polybar tmux tty-clock xclip build-essential obs-studio pavucontrol xdotool cmatrix \
 
 # lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
