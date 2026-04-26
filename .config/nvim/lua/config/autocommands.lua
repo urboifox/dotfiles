@@ -7,6 +7,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- set the current directory to the directory nvim opened in
+local arg = vim.fn.argv(0)
+if type(arg) == "table" then
+    arg = arg[1]
+end
+if vim.fn.argc() == 1 and vim.fn.isdirectory(arg) == 1 then
+    vim.cmd("cd " .. vim.fn.fnameescape(arg))
+end
+
 -- Remove quick fix item when pressing dd
 local function remove_qf_item()
     local qf_list = vim.fn.getqflist()
