@@ -1,28 +1,33 @@
-vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
+vim.pack.add({
+    {
+        src = "https://github.com/nvim-neo-tree/neo-tree.nvim",
+        version = vim.version.range("3"),
+    },
+    -- dependencies
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/MunifTanjim/nui.nvim",
+    -- optional, but recommended
+    "https://github.com/nvim-tree/nvim-web-devicons",
+})
 
-require("oil").setup({
-    skip_confirm_for_simple_edits = true,
-    keymaps = {
-        ["<C-f>"] = "actions.close",
-        ["gr"] = {
-            callback = function()
-                require("oil").open(vim.fn.getcwd())
-            end,
-            desc = "Jump to project root",
+require("neo-tree").setup({
+    filesystem = {
+        window = {
+            mappings = {
+                ["w"] = "none", -- disables word-forward behavior in tree
+                ["<C-f>"] = "none",
+            },
         },
-        ["<C-l>"] = false,
-        ["<C-h>"] = false,
     },
-    view_options = {
-        show_hidden = true,
-    },
-    float = {
-        padding = 2,
-        max_width = 80,
-        max_height = 20,
-        border = "rounded",
+    event_handlers = {
+        {
+            event = "file_opened",
+            handler = function()
+                require("neo-tree.command").execute({ action = "close" })
+            end,
+        },
     },
 })
 
-vim.keymap.set("n", "<C-f>", "<cmd>Oil<CR>", { desc = "Open explorer in float window" })
-vim.keymap.set("n", "<leader>f.", "<cmd>Oil<CR>", { desc = "Open current directory in explorer" })
+vim.keymap.set("n", "<C-f>", "<cmd>Neotree toggle<CR>", { desc = "Toggle explorer" })
+vim.keymap.set("n", "<leader>f.", "<cmd>Neotree reveal<CR>", { desc = "Reveal current file in explorer" })
