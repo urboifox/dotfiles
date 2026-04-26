@@ -27,6 +27,8 @@ require("neo-tree").setup({
             mappings = {
                 ["w"] = "none",
                 ["<C-f>"] = "none",
+                ["/"] = "none",
+                ["?"] = "none",
             },
         },
     },
