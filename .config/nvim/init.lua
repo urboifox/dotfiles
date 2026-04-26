@@ -17,6 +17,7 @@ require("mason-lspconfig").setup({
         "svelte",
         "ts_ls",
         "tailwindcss",
+        "prettier"
     },
 })
 
