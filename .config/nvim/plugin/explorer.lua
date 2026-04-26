@@ -10,11 +10,22 @@ vim.pack.add({
     "https://github.com/nvim-tree/nvim-web-devicons",
 })
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 require("neo-tree").setup({
     filesystem = {
+        hijack_netrw_behavior = "open_current",
+        filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+        },
         window = {
+            position = "left",
+            width = 40,
             mappings = {
-                ["w"] = "none", -- disables word-forward behavior in tree
+                ["w"] = "none",
                 ["<C-f>"] = "none",
             },
         },
