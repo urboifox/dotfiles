@@ -36,9 +36,14 @@ feh --bg-scale ~/.config/wallpapers/11.jpg &
 # Set keyboard layout
 setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle # Set keyboard layout (i.e us, ara)
 
-# Setup touchpad
-xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
-xinput set-prop 11 "libinput Tapping Enabled" 1
+# Setup natural scrolling
+xinput list | grep -i "mouse" | grep -v "Keyboard" | while read -r line; do
+  id=$(echo "$line" | grep -o 'id=[0-9]*' | cut -d= -f2)
+  xinput set-prop "$id" "libinput Natural Scrolling Enabled" 0
+done
+
+TP_ID=$(xinput list | grep -i "touchpad" | grep -o 'id=[0-9]*' | cut -d= -f2)
+xinput set-prop "$TP_ID" "libinput Natural Scrolling Enabled" 1
 
 # INFO: Adjust the delay before key repetition starts
 # 250 => delay in ms
