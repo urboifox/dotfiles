@@ -14,8 +14,6 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
         "stylua",
-        "svelte",
-        "ts_ls",
         "tailwindcss",
     },
 })

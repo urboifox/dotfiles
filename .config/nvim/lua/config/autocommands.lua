@@ -43,13 +43,8 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-local treesitter_autostart = vim.api.nvim_create_augroup("treesitter-autostart", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-    group = treesitter_autostart,
-    pattern = { "svelte", "typescriptreact", "javascriptreact", "css", "scss", "less" },
     callback = function(ev)
-        local buf = ev.buf
-        pcall(vim.treesitter.start, buf)
-        vim.b[buf].undo_ftplugin = (vim.b[buf].undo_ftplugin or "") .. " | lua pcall(vim.treesitter.stop)"
+        pcall(vim.treesitter.start, ev.buf)
     end,
 })
