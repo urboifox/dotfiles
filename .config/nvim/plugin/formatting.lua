@@ -15,6 +15,7 @@ require("conform").setup({
         html = { "prettier", stop_after_first = true },
         css = { "prettier", stop_after_first = true },
         http = { "kulala-fmt", stop_after_first = true },
+        gdscript = { "gdscript-formatter" },
     },
 })
 

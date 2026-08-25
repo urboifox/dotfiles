@@ -7,6 +7,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- listen to godot if nvim was opened with a godot project
+local projectfile = vim.fn.getcwd() .. "/project.godot"
+
+if vim.fn.filereadable(projectfile) == 1 then
+    vim.fn.serverstart("./godothost")
+end
+
 -- set the current directory to the directory nvim opened in
 local arg = vim.fn.argv(0)
 if type(arg) == "table" then
